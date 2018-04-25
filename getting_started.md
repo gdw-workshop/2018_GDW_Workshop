@@ -2,7 +2,7 @@
 *Mark Stenglein*
 *4.25.2018*
 
-There is now a gdw-workshop github account, and a new repository named 2018_GDW_Workshop where we can deposit workshop content.  We can also take advantage of github’s ability to render markdown format files to make nice looking webpages easily (this page is written in markdown)..  
+There is now a gdw-workshop github account, and a new repository named 2018_GDW_Workshop where we can deposit workshop content.  We can also take advantage of github’s ability to render markdown format files to make nice looking webpages easily (this page is written in markdown: click Raw above to see the file in the plain text unrendered markdown format).
 
 **Instructions to get started**
 
