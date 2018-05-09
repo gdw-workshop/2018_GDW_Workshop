@@ -34,7 +34,7 @@ Now, we'll use the bowtie2-build indexing program to create the index.  This com
 (2) the name of the index (can be whatever you want)
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
+bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
 ```
 
 Confirm that you built the index.  You should see six files with names ending in bt2, like boa_mtDNA_bt_index.3.bt2
@@ -50,14 +50,14 @@ Note that this index building went very fast for a small genome like the boa mtD
 Now that we've created the index, we can map reads to the boa mtDNA.  We'll map our Trimmomatic-trimmed paired reads to this sequence, as follows:
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_mtDNA_bt_index \
+bowtie2 -x boa_mtDNA_bt_index \
    -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq \
    --no-unal --threads 4 -S SRR1984309_mapped_to_boa_mtDNA.sam
 ```
 
 Let's deconstruct this command line (note: the comments will screw up this command: don't copy and paste from this box): 
 ```
- ~/Desktop/GDW_Apps/bowtie2/bowtie2
+ bowtie2
    -x boa_mtDNA_bt_index         # -x: name of index you created with bowtie2-build
    -q                # -q: the reads are in FASTQ format
    -1 SRR1984309_1_trimmed.fastq      # name of the paired-read FASTQ file 1
@@ -66,6 +66,11 @@ Let's deconstruct this command line (note: the comments will screw up this comma
    --threads 4            # since our computers have multiple processers, run on 4 processors to go faster
    -S SRR1984309_mapped_to_boa_mtDNA.sam   # name of output file in SAM format
 ```
+
+- Some questions to consider:
+  - What percentage of reads mapped to the boa mitochondrial genome?
+  - Does this make biological sense?
+
 
 The output file SRR1984309_mapped_to_boa_mtDNA.sam is in [SAM format](https://en.wikipedia.org/wiki/SAM_(file_format)).  This is a plain text format, so you can look at the first 20 lines by running this command:
 
@@ -122,7 +127,7 @@ Now, we'll run bowtie2 to map reads to the entire boa genome.  This time we'll r
 2. We'll keep track of which reads _didn't_ map to the genome using the --un-conc option
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_constrictor_bt_index --local \
+bowtie2 -x boa_constrictor_bt_index --local \
    -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq \
    --no-unal --threads 4 -S SRR1984309_mapped_to_boa_genome.sam --un-conc SRR1984309_not_boa_mapped.fastq
 ```
@@ -134,7 +139,7 @@ How many non-mapping reads remain in these files?
 We will use these non-mapping reads as input to our de novo SPAdes assembly.  Run SPAdes as follows:
 
 ```
-~/Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
+spades.py   -o SRR1984309_spades_assembly \
    --pe1-1 SRR1984309_not_boa_mapped.1.fastq \
    --pe1-2 SRR1984309_not_boa_mapped.2.fastq \
    -m 12 -t 4
@@ -142,7 +147,7 @@ We will use these non-mapping reads as input to our de novo SPAdes assembly.  Ru
 
 Command line options explained:
 ```
-~/Desktop/GDW_Apps/SPAdes/bin/spades.py   
+spades.py   
    -o SRR1984309_spades_assembly \         # name of directory (folder) where SPAdes output will go
    --pe1-1 SRR1984309_not_boa_mapped.1.fastq \   # name of read1 input file
    --pe1-2 SRR1984309_not_boa_mapped.2.fastq \   # name of read2 input file

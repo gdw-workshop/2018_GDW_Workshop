@@ -1,6 +1,6 @@
 ## Intrahost variation exercise
 
-GDW 2017
+GDW 2018
 ---
 
 ### In this exercise, we will go through a variant calling pipeline. 
@@ -33,7 +33,7 @@ The file extension `.tar.gz` is similar to .zip.  It means this is a compressed 
 You'll often run across `.tar.gz` files when you're downloading data or software.  You can uncompress and extract this file using the tar command, as follows:
 
 ```
-tar xvzf variant_exercise_files.tar.gz
+tar xvf variant_exercise_files.tar.gz
 ```
 
 You should now see 5 new file (run the `ls` command):
@@ -50,7 +50,7 @@ lofreq                   # the variant caller we'll use
 We're going to use bowtie2 to map reads in the dataset to the viral genome.  First, we need to create a bowtie2 index.  Remember how to do that?
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2-build viral_genome.fasta viral_genome_bt_index 
+bowtie2-build viral_genome.fasta viral_genome_bt_index 
 ```
 
 
@@ -59,7 +59,7 @@ We're going to use bowtie2 to map reads in the dataset to the viral genome.  Fir
 Now that we've created the index, we can map reads to it.  We'll use [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) to do this, as follows
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2 -x viral_genome_bt_index \
+bowtie2 -x viral_genome_bt_index \
    -q -1 Pool_filtered_R1.fastq  -2 Pool_filtered_R2.fastq \
    --no-unal --threads 4 -S Pool_reads_aligned_to_viral_genome.sam
 ```
@@ -80,6 +80,8 @@ samtools sort -T tmp -O 'bam' Pool_reads_aligned_to_viral_genome.bam  > Pool_rea
 
 Now, we'll run lofreq.  To learn more about how you could run lofreq, run:
 ```
+# note that we are running lofreq by typing ./lofreq
+# this is because lofreq is in our current directory (.), and not elsewhere in our PATH
 ./lofreq         # show general usage info
 ./lofreq call    # show general usage info for the call command in lofreq (actually does variant calling)
 ```
@@ -121,29 +123,21 @@ First, you need to get your reference sequence into Geneious, preferably with an
 
 
 
-### To download all the content from the GitHub site to your external disk drive
+### To download all the content from the GitHub site to your thumb drive
 
 To have a copy of all the material to take home with you.
 
 ```
 # change directory to your external hard drive
+# TODO: FIX THIS PATH for thumbdrive
 cd /Volumes/GDWDrive/     
 
 # 'clone' the repository (download a copy)
-git clone https://github.com/stenglein-lab/2017_GDW.git
+git clone https://github.com/gdw-workshop/2018_GDW_Workshop.git
 ```
 
-This will create a new directory on your external drive named 2017_GDW with all the course material that's on the github repository.
+This will create a new directory on your thumb drive named 2018_GDW_Workshop with all the course material that's on the github repository.
 
-If the GitHub site gets updated, you can update your local copy using the `git pull` command
-
-```
-# change directory to the GDW_2017 directory in your external hard drive
-cd /Volumes/GDWDrive/2017_GDW/
-
-# update the repository using pull command
-git pull
-```
 
 You can also download the entire repository directly from the github site (as a .zip file), and our intent is to leave this site up indefinitely.
 

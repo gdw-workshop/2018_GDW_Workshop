@@ -1,5 +1,5 @@
 # Downloading and Processing Datasets and Genomes exercise
-[GDW 2017](http://gdwworkshop.colostate.edu/)
+[GDW 2018](http://gdwworkshop.colostate.edu/)
 ---
 
 ## In this exercise, we will download, process, and evaluate NGS datasets and genome sequences.  We will:
@@ -30,6 +30,7 @@ We're going to download this dataset using the command line tool fastq-dump, par
 
 change (move) to your home directory, if not already there
 ```
+# running cd with no options moves you to your home directory
 cd
 ```
 
@@ -57,7 +58,7 @@ We will download the dataset using the fastq-dump tool, part of the [SRA toolkit
 To run fasta-dump, you just need to specify the run # (the SRR#) of the dataset you want.  Recall that our run # is SRR1984309. The --split-files option of the command will create 2, synchronized files for the paired reads
 
 ```
-~/Desktop/GDW_Apps/sratoolkit/bin/fastq-dump SRR1984309 --split-files
+fastq-dump SRR1984309 --split-files
 ```
 
 Confirm that you downloaded the files.  You should see files named SRR1984309_1.fastq and SRR1984309_2.fastq that are each 44 Mb.
@@ -103,23 +104,9 @@ Trimmomatic has _a lot_ of options, described [here](http://www.usadellab.org/cm
 
 We will run this command to trim our reads:
 
-**DON'T USE THIS**
-```
-java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \
-	SRR1984309_1.fastq SRR1984309_2.fastq \
-	SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq \
-	SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq \
-	ILLUMINACLIP:../Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 \
-	LEADING:20 TRAILING:20 \
-	SLIDINGWINDOW:4:20 \
-	MINLEN:60
-
-```
-**USE THIS INSTEAD (single line version)**
 ```
 java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  SRR1984309_1.fastq SRR1984309_2.fastq SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq ILLUMINACLIP:../Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:60 
 ``` 
-_Note that the `\` character at the end of lines allows you to perform a multi-line command at the linux command line._
 
 
 Breaking this down:
@@ -198,6 +185,7 @@ mv ~/Downloads/sequence.gb ./boa_mtDNA.gb
 
 You can use the cat (or less) commands to output the contents of these files:
 ```
+# cat outputs the contents of a file all at once
 cat boa_mtDNA.fasta
 cat boa_mtDNA.gb
 
@@ -210,6 +198,7 @@ Hint: press `space` to advance a page in less and press `q` to exit
 
 
 We want these files in Geneious too.  Drag them into Geneious:  
+ - Open Geneious
  - Create a new folder in Geneious 
  - Drag and drop these files into Geneious
 
