@@ -114,8 +114,9 @@ blastp \
 The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand. For example, the commands  
 `head camel_ferritin.blastout`
 and
-`head \
-   camel_ferritin.blastout`
+```head \
+   camel_ferritin.blastout
+```
 are equivalent.
 This search should take a couple minutes at most.  Feel free to try and modify the above command to search your favorite taxonomic group. Open the contents of the files and explore:
 ```
@@ -139,7 +140,7 @@ blastp \
    -out camel_ferritin.blastout.tsv
 ```
 Open the contents of the new output file.
-What is different?  Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?
+What is different?  Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?  The result is actually a tab-delimited file, which can easily be imported into Excel or other spreadsheet software.  What does each column represent (hint: try looking at the manual using `blastp -help`)?
 
 ## Part 2:  Building a database and local BLAST
 The remote blast above is convenient, but when no internet connection is available, or when there are thousands of sequences, this may not be optimal.  In these cases and many others, it is easiest to build your own BLAST database and perform the search on your own computer.
@@ -151,11 +152,11 @@ From the above link:
 - Go to download tab
 - Clck and download fasta link
 
-Or download from the command line using the command below:
+Alternatively, you can download from the command line using the command below:
 ```
 curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
 ```
-
+Easy, huh!
 Now let's process the data and build a blastable database
 ```
 # Uncompress the file.  What format is it?
