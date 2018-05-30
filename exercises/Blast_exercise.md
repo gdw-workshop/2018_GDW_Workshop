@@ -99,7 +99,10 @@ blastp \
    -remote \
    -out camel_ferritin.blastout
 
-# Repeat the above search, but limit it to a specific species
+# Open the file to screen (feel free to also try the commands `more`, `less`, `head`, or `tail` to read the file)
+cat camel_ferritin.blastout
+
+# Repeat the above search, but limit it to a specific species, e.g. alpacas
 blastp \
    -query camel_ferritin.faa \
    -db refseq_protein \
@@ -111,13 +114,14 @@ blastp \
 The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand.  
 This search should take a couple minutes at most.  Feel free to try and modify the above command to search your favorite taxonomic group. Open the contents of the files and explore:
 ```
-# Open the file to screen
+# Open the second blast result file to the screen
 cat alpaca_ferritins.blastout
 
 # More convenient way of opening large files:
 less -S alpaca_ferritins.blastout
 ```
-The results look good. However, this output format can be difficult to parse if we have thousands and thousands of sequences.
+The results look good. How many matches did you find in each file (hint, try counting lines using the command `wc -l`)?
+However, this output format can be difficult to parse if we have thousands and thousands of sequences.
 Let's repeat the search again, but this time with some changes.
 ```
 # New Blast Search
