@@ -112,9 +112,12 @@ blastp \
 
 ```
 The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand. For example, the commands  
-`head camel_ferritin.blastout`
+```
+head camel_ferritin.blastout
+```
 and
-```head \
+```
+head \
    camel_ferritin.blastout
 ```
 are equivalent.
@@ -150,7 +153,7 @@ From the above link:
 - Search for accession GECA00000000.1
 - Click on contig link at bottom (To the right of "TSA"), it looks like [GECA01000001-GECA01039180](https://www.ncbi.nlm.nih.gov/Traces/wgs?val=GECA01)
 - Go to download tab
-- Clck and download fasta link
+- Clck and download fasta link (GECA01.1.fsa\_nt.gz)
 
 Alternatively, you can download from the command line using the command below:
 ```
