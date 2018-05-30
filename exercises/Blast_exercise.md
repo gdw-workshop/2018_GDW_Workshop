@@ -79,7 +79,7 @@ Select -> Send To -> File -> Format: fasta
 This should be saved in the downloads folder as "sequence.fasta"  
 Now let's BLAST!!!
 ```
-# Make a new folder move into it
+# Make a new folder and move into it
 mkdir BLAST_PRACTICE
 cd BLAST_PRACTICE
 
@@ -99,7 +99,7 @@ blastp \
    -remote \
    -out camel_ferritin.blastout
 
-# Open the file to screen (feel free to also try the commands `more`, `less`, `head`, or `tail` to read the file)
+# Open the file to the screen (feel free to also try the commands `more`, `less`, `head`, or `tail` to read the file)
 cat camel_ferritin.blastout
 
 # Repeat the above search, but limit it to a specific species, e.g. alpacas
@@ -111,7 +111,12 @@ blastp \
    -entrez_query "Alpaca[ORGN]"
 
 ```
-The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand.  
+The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand. For example, the commands  
+`head camel_ferritin.blastout`
+and
+`head \
+   camel_ferritin.blastout`
+are equivalent.
 This search should take a couple minutes at most.  Feel free to try and modify the above command to search your favorite taxonomic group. Open the contents of the files and explore:
 ```
 # Open the second blast result file to the screen
@@ -142,7 +147,7 @@ The remote blast above is convenient, but when no internet connection is availab
 In this section, we are going to download the transcriptome (remember what a 'transcriptome' is?) from the pathogen *Trichinella patagoniensis*.  [Krivokapich et al, 2012 doi:10.1016/j.ijpara.2012.07.009](http://www.sciencedirect.com/science/article/pii/S0020751912001932). This genus of nematode worms causes the disease trichinellosis, and infect and/or are transmitted between a variety of mammals, including humans. This particular species was described from South American pumas. We will download the transcriptome from NCBI's Transcriptome Shotgun Assembly ([TSA](https://www.ncbi.nlm.nih.gov/genbank/tsa/)) database.
 From the above link:
 - Search for accession GECA00000000.1
-- Click on contig link at bottom (To the right of "TSA")
+- Click on contig link at bottom (To the right of "TSA"), it looks like [GECA01000001-GECA01039180](https://www.ncbi.nlm.nih.gov/Traces/wgs?val=GECA01)
 - Go to download tab
 - Clck and download fasta link
 
