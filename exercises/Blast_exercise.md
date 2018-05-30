@@ -128,6 +128,8 @@ cat alpaca_ferritins.blastout
 
 # More convenient way of opening large files:
 less -S alpaca_ferritins.blastout
+
+# NOTE: simply type the letter 'q' to exit the `less` viewer 
 ```
 The results look good. How many matches did you find in each file (hint, try counting lines using the command `wc -l`)?
 However, this output format can be difficult to parse if we have thousands and thousands of sequences.
@@ -143,7 +145,7 @@ blastp \
    -out camel_ferritin.blastout.tsv
 ```
 Open the contents of the new output file.
-What is different?  Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?  The result is actually a tab-delimited file, which can easily be imported into Excel or other spreadsheet software.  What does each column represent (hint: try looking at the manual using `blastp -help`)?
+What is different?  What does the 'num_alignments' parameter mean? Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?  The result is actually a tab-delimited file, which can easily be imported into Excel or other spreadsheet software.  What does each column represent (hint: try looking at the manual using `blastp -help`)?
 
 ## Part 2:  Building a database and local BLAST
 The remote blast above is convenient, but when no internet connection is available, or when there are thousands of sequences, this may not be optimal.  In these cases and many others, it is easiest to build your own BLAST database and perform the search on your own computer.
@@ -153,13 +155,13 @@ From the above link:
 - Search for accession GECA00000000.1
 - Click on contig link at bottom (To the right of "TSA"), it looks like [GECA01000001-GECA01039180](https://www.ncbi.nlm.nih.gov/Traces/wgs?val=GECA01)
 - Go to download tab
-- Clck and download fasta link (GECA01.1.fsa\_nt.gz)
+- Click and download fasta link (GECA01.1.fsa\_nt.gz)
 
 Alternatively, you can download from the command line using the command below:
 ```
 curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
 ```
-Easy, huh!
+Easy, huh!  
 Now let's process the data and build a blastable database
 ```
 # Uncompress the file.  What format is it?
@@ -184,33 +186,36 @@ What do the output files look like?  Can you open them?
 
 Let's select some random sequences from the transcriptome to use as a query.  We will use the [seqtk](https://github.com/lh3/seqtk) toolkit from Heng Li. This toolkit is fast and a standard for basic processing of sequence files (fasta and fastq).
 ```
+# Get a list of the subprograms in 'seqtk'
+~/Desktop/GDW_Apps/seqtk-master/seqtk
+
+# Get the manual for a particular sub-program of 'seqtk'
+~/Desktop/GDW_Apps/seqtk-master/seqtk sample
+~/Desktop/GDW_Apps/seqtk-master/seqtk seq
+
 # Select 5 sequences at random
 ~/Desktop/GDW_Apps/seqtk-master/seqtk sample GECA01.1.fsa_nt 5 > sample5.fasta
 
 # Remember how to check the number of sequences?
 grep -c "^>" sample5.fasta
 ```
-Next, we are going to blast these sequences against the transcriptome database we made. What do you expect to find?
+Next, we are going to blast these 5 sequences against the transcriptome database we made. What do you expect to find?
 ```
 blastn \
    -query sample5.fasta \
    -db Tpat \
    -out sample5.blastout \
-   -num_alignments 10 \
-   -outfmt 6 \
-   -num_threads 2
+   -outfmt 6
 ```
 How many hits are there in total?
-Let's repeat but filter for only the extremely small evalues.
+Let's repeat but filter for only the extremely small e-values.
 Do you expect more matches or fewer matches?
 ```
 blastn \
    -query sample5.fasta \
    -db Tpat \
    -out sample5.blastout2 \
-   -num_alignments 10 \
    -outfmt 6 \
-   -num_threads 2 \
    -evalue 1e-50
 ```
 For the last part, we are going to retrieve the sequences for our matches from the above BLAST search.
@@ -231,7 +236,7 @@ blastdbcmd -help
 
 ## Part 3: Extra credit
 [Wu et al. 2008 (doi:10.1016/j.parint.2008.03.005)](http://www.sciencedirect.com/science/article/pii/S1383576908000391) identified a set of candidate genes that were differentially expressed between various *Trichinella* infections.  One of these genes was the pax7 protein, accession: [KRY39300.1](https://www.ncbi.nlm.nih.gov/protein/954373245?report=fasta).
-Is this gene expressed in the *Trichinella patagoniensis* transcriptome?
+Is this gene expressed (i.e. found) in the *Trichinella patagoniensis* transcriptome?
 If so, are there multiple paralogs?  
 Hint: you will be searching a nucleotide database with a protein sequence.
 
