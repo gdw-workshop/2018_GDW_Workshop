@@ -4,6 +4,8 @@ Genomics of Disease in Wildlife Workshop, Summer 2018
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
 [GDW website](https://gdwworkshop.colostate.edu/)
+
+
 [Course agenda (pdf)](./GDW2018_Agenda.pdf)
 
 ### This page contains the workshop agenda and links to course material 
