@@ -41,7 +41,6 @@ Lory Center Room 304-306
  * **20:30-21:30**  Social Hour with Invited Speaker
 
 ### Tuesday June 5, 2018: Genome Assembly, Whole Genome Alignments, Metagenomics
-Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
  * **08:15-08:25**  Step 2: Best Practices for Generating Quality Genomes of Host and Pathogen
@@ -60,7 +59,6 @@ Lory Center Room 304-306
  * **20:30-21:30**  Social Hour with Invited Speaker
 
 ### Wedendsday June 6, 2018: Multiple Sequence Alignments and Phylogenomics
-Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
  * **08:15-08:25**  Step 3: Comparing Differences Within and Between Genomes, Jill Pecon Slattery
@@ -80,7 +78,6 @@ Lory Center Room 304-306
  * **19:30-20:30**  Optional computer time office hours with Instructors
 
 ### Thursday June 7, 2018: Population Genomics
-Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
  * **08:15-08:25**  Step 4: Applying my genomic tools across populations within host & pathogen, Jill Pecon Slattery
@@ -99,7 +96,6 @@ Lory Center Room 304-306
  * **19:30-20:30**  Optional computer time office hours with Instructors
 
 ### Friday June 8, 2018: Clocks, Signals of Selection and Adaptation, Variant Function
-Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
  * **08:15-08:25**  Step 5: Functional Signals of Host-Pathogen Interactions from Population & Comparative Genomics 
@@ -118,7 +114,6 @@ Lory Center Room 304-306
  * **18:00-?**      Party Downtown Fort Collins    
 
 ### Saturday June 9, 2018: Putting it all together: your workflow presentations
-Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
  * **08:15-08:20**  Step 6: Our Workflow & GDW2018 Publication, Jill, Bob, Sue, Chris, Mark
