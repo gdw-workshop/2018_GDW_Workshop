@@ -16,9 +16,9 @@ We will post as much material as possible as soon as possible. Our intent is to 
 Longs Peak Room, Lory Center
 
  * **18:30-21:30**  Welcome and Opening Reception,
- * **18:30-18:45**  Welcome and Opening Remarks, Jill Pecon Slattery and Sue Vandewoude 
- * **18:45-19:00**  Introduction of the Best Practices workflow group [exercise](./GDW_2018_scenarios.pdf), Bob Fitak 
- * **19:00-19:45**  10 Attendee Presentations
+ * **18:30-18:45**  Welcome and Opening Remarks, Jill Pecon Slattery and Sue Vandewoude  
+ * **18:45-19:30**  10 Attendee Presentations
+ * **19:30-19:45**  Introduction of the Best Practices workflow group exercise, Bob Fitak: [Scenarios](./GDW_2018_scenarios.pdf) [Powerpoint](./lectures/Fitak_GWD2018_GroupActivity.pdf)  
  * **19:45-21:30**  Refreshments and Social Time
 
 ### Monday June 4, 2018. Day 1: Command Line, NGS Data Overview, Genome Mining
