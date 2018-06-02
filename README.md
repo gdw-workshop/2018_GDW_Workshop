@@ -5,7 +5,7 @@ Genomics of Disease in Wildlife Workshop, Summer 2018
 
 [Course agenda](./GDW2018_Agenda.pdf)
 
-### This page contains links to course material from GDW 2018
+### This page contains the workshop agenda and links to course material 
 
 We will post as much material as possible as soon as possible.  Our intent is to leave this material online indefinitely.
 
@@ -14,7 +14,7 @@ Longs Peak Room, Lory Center
 
  * 18:30-21:30  Welcome and Opening Reception,  
  * 18:30-18:45  Welcome and Opening Remarks, Jill Pecon Slattery and Sue Vandewoude 
- * 18:45-19:00  Introduction of the Best Practices workflow group exercise, Bob Fitak 
+ * 18:45-19:00  Introduction of the Best Practices workflow group [exercise](./GDW_2018_scenarios.pdf), Bob Fitak 
  * 19:00-19:45  10 Attendee Presentations
  * 19:45-21:30  Refreshments and Social Time
 
@@ -129,37 +129,30 @@ Lory Center Room 304-306
 
 
 
+**Other materials**
+
+* [GDW website](https://gdwworkshop.colostate.edu/)
+* [Agenda](./GDW2018_Agenda.pdf)
+* [Group scenarios](./GDW_2018_scenarios.pdf)
 
 
 
 
 
 
-
-**Other material**
+**Even more materials**
 
 [Introduction to GDW lecture](./lectures/Pecon-Slattery_Introduction_GDW2017.pdf)
-
 
 [BLAST lecture](./lectures/Fitak_GWD2017_Blast.pdf)
 
 [BLAST exercise](./exercises/Blast_exercise.md)
-
-[Downloading exercise](./exercises/download_exercise.md)
 
 # Monday 6/5/17
 
 [NGS raw data and QC lecture](./lectures/Fitak_GWD2017_NGS-QC.pdf)
 
 [NGS raw data and QC exercise](./exercises/Raw_data_exercise.md)
-
-[Sequence mapping lecture](./lectures/Fitak_GWD2017_Mapping.pdf)
-
-[Sequence assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf)
-
-[Mapping and de novo assembly exercise](./exercises/mapping_assembly_exercise.md)
-
-[Metagenomics lecture](./lectures/Stenglein_metagenomics_lecture.pdf)
 
 # Tuesday 6/6/17
 [Whole Genome Alignment lecture](./lectures/Fitak_GWD2017_WGA.pdf)
