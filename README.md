@@ -145,6 +145,7 @@ Time | Activity
 * [GDW website](https://gdwworkshop.colostate.edu/)
 * [Agenda](./GDW2018_Agenda.pdf)
 * [Group scenarios](./GDW_2018_scenarios.pdf)
+* [NGS glossary](./Genomics_and_NGS_Glossary.md)
 
 
 
