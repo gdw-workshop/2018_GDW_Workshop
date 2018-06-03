@@ -20,6 +20,6 @@ Here we will briefly learn how to interact with a UNIX computer via the command 
 9. remove files or directories: `rm` or `rmdir`
 
 Before we begin, you will need to open the 'terminal' on your MacBook Pro computers.  Simply search for \"terminal\" using the magnifying glass in the upper right-hand corner and select the terminal application.  See the red arrow in the image below:  
-![term-search](./exercises/term1.png)
+![term-search](./term1.png)
 Then, simply follow the tutorial below.  The actual commands to enter in the terminal will appear in light grey boxes below.  Although you can copy and paste these commands, we suggest you type them in yourself until you get more familiar with the terminal.  We will learn a few tricks of the trade as we go along as well.
 Here we go!!!
