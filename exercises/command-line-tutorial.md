@@ -1,4 +1,4 @@
-#A Brief Introduction to the UNIX Command Line
+# A Brief Introduction to the UNIX Command Line
 With the advent of next-generation sequencing and the era of 'Big Data', it is becoming increasingly necessary for researchers to develop basic computational skills.  As a result, at some point in time you will encounter software that does not run via a convenient and user-friendly graphical user interface (GUI).  Although all of us would love a pretty GUI for every program we use, there are certain advantages to interacting with a computer (e.gs., a personal computer, server, or cluster) via a command line interface. A command line interface often allows for:  
 - Increased flexibility
 - More parameter choices and options
@@ -7,7 +7,7 @@ With the advent of next-generation sequencing and the era of 'Big Data', it is b
 - Sharing of methods (i.e., the code) with others
 - Perhaps most importantly, the ability to concatenate multiple software into convenient, streamlined pipelines that can be sent to servers for rapid, large-scale analyses.
 
-##Objectives
+## Objectives
 Here we will briefly learn how to interact with a UNIX computer via the command line. UNIX is the basis for both Mac and Linux computers, which includes most servers you may encounter. The way to interact with a UNIX computer is called the 'interpreter' or 'SHELL'.  On a Mac or Linux computer the default is called BASH. Although other SHELLs exist, we will use BASH below. Our goals are to learn some fundamental commands to perform many of the same tasks you would normally do on a daily basis, such as:  
 1. changing directories (aka, folders): `cd`
 2. creating directories: `mkdir`
@@ -30,7 +30,7 @@ Did you open the terminal?  If so, it should look something like this:
 Next, simply follow the tutorial below.  The actual commands to enter in the terminal will appear in light grey boxes below.  Although you can copy and paste these commands, we suggest you type them in yourself until you get more familiar with the terminal.  We will learn a few tricks of the trade as we go along as well.
 Here we go!!!
 
-###Step 1:  changing directories
+### Step 1:  changing directories
 Normally, when you open your computer, you start in the Desktop by default.  The Desktop is actually a directory (folder) in your computer's file system.  When you open a new session in the terminal, you most likely will start in a different location.  To find out where your terminal is 'located', enter the command:
 ```
 pwd
@@ -52,13 +52,13 @@ cd ~
 The `~` always refers to this preset Home location.  Check your location using `pwd`, and then move again into the Desktop (`cd Desktop`).  
 Great job so far!!!
 
-###Step 2:  making a directory
+### Step 2:  making a directory
 It is often the case that you will want to make a new directory, and store a bunch of cool files in it.  This is a really easy task.  Simply enter:
 ```
 mkdir Practice
 ```
 This will make a new directory called "Practice" in the Desktop.  Feel free to change "Practice" to anything you would like.  
-###NOTE:  Avoid using space in folder or filenames, they can cause a lot of problems.  Use "_" instead!!!
+### NOTE:  Avoid using space in folder or filenames, they can cause a lot of problems.  Use "_" instead!!!
 Minimize the terminal and look at your Desktop.  Is your folder there?
 Great!  Now move into this new folder:
 ```
@@ -66,7 +66,7 @@ cd Practice
 ```
 Piece of cake, huh!
 
-###Step3: listing contents
+### Step3: listing contents
 Now we will look at see which directories and files are inside of a folder.  But first, let's move back to the Desktop.
 ```
 cd Desktop
@@ -97,7 +97,7 @@ man ls
 ```
 To exit the manual for ls, enter `q`.
 
-#Step 4: making files
+### Step 4: making files
 Before we make some new files, let's move back into our Practice directory:
 ```
 cd Practice
