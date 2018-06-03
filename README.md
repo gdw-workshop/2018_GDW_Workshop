@@ -15,17 +15,16 @@ We will post as much material as possible as soon as possible. Our intent is to 
 ### Sunday June 3, 2018. Welcome and Opening Reception (6:30-9:30 PM) 
 Longs Peak Room, Lory Center
 
- * **18:30-21:30**  Welcome and Opening Reception,
- * **18:30-18:45**  Welcome and Opening Remarks, Jill Pecon Slattery and Sue Vandewoude  
+ * **18:30-18:45**  Welcome and Opening Remarks, Sue VandeWoude  
  * **18:45-19:30**  10 Attendee Presentations
- * **19:30-19:45**  Introduction of the Best Practices workflow group exercise, Bob Fitak: [Scenarios](./GDW_2018_scenarios.pdf) [Powerpoint](./lectures/Fitak_GWD2018_GroupActivity.pdf)  
- * **19:45-21:30**  Refreshments and Social Time
+ * **19:30-20:00**  Introduction of the Best Practices workflow group exercise, Bob Fitak: [Scenarios](./GDW_2018_scenarios.pdf) [Powerpoint](./lectures/Fitak_GWD2018_GroupActivity.pdf)  
+ * **20:00-21:30**  Refreshments and Social Time
 
 ### Monday June 4, 2018. Day 1: Command Line, NGS Data Overview, Genome Mining
 Lory Center Room 304-306
 
  * **07:00–08:00**  Breakfast, Rams Horn Dining Center
- * **08:15-08:25**  Step 1: What are my NGS tools for wildlife disease research? Assignment: Workflow Projects, Jill Pecon-Slattery 
+ * **08:15-08:25**  Step 1: What are my NGS tools for wildlife disease research? Assignment: Workflow Projects, Bob Fitak and Mark Stenglein
  * **08:25-08:35**  Introduction to workshop computers, Joe Strecker
  * **08:35-09:30**  [Intro to genomics and NGS](./lectures/Stenglein_introduction_to_genomics_and_sequencing_lecture.pdf), Mark Stenglein 
  * **09:30-10:00**  CSU Flash Talk, Christie Mayo
