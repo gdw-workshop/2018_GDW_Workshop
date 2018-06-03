@@ -58,7 +58,7 @@ It is often the case that you will want to make a new directory, and store a bun
 mkdir Practice
 ```
 This will make a new directory called "Practice" in the Desktop.  Feel free to change "Practice" to anything you would like.  
-### NOTE:  Avoid using space in folder or filenames, they can cause a lot of problems.  Use "_" instead!!!
+### NOTE:  Avoid using spaces in folder or filenames, they can cause a lot of problems.  Use "_" instead!!!
 Minimize the terminal and look at your Desktop.  Is your folder there?
 Great!  Now move into this new folder:
 ```
@@ -102,6 +102,32 @@ Before we make some new files, let's move back into our Practice directory:
 ```
 cd Practice
 ```
+Now we can make an empty file called "test.txt" using the `touch` command:
+```
+touch test.txt
+```
+Now check the contents of our Practice directory using `ls`.  
+How big is this new file? HINT:  use on of the parameters for the `ls` command.  
+File names can actually be whatever you want, and don't require an extension like ".txt". For example:
+```
+touch test2
+```
+Using an extension like ".txt" is often used to remind the user what type of file you are working with.  Some programs may require it.  
+A second method to create a new file is to direct the output of a command to a new file using `>`.  Let's list the full details for the files in our folder and write them to a new file:
+```
+ls -l > file_details.txt
+```
+Alternatively, you could write the details for just one of the files:
+```
+ls -l test2 > test2.details.txt
+```
+or for the Desktop folder:
+```
+ls -l .. > Desktop.txt
+```
+Feel free to check the contents of the folder using the `ls` command, or you can also double click on the folder in the Desktop to compare.
+
+### Step 5: Copying files
 
 
 
