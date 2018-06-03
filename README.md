@@ -15,7 +15,7 @@ We will post as much material as possible as soon as possible. Our intent is to 
 ### Sunday June 3, 2018. Welcome and Opening Reception (6:30-9:30 PM) 
 Longs Peak Room, Lory Center
 
-   |
+Time | What
 --- | ---
 **18:30-18:45** | Welcome and Opening Remarks, Sue VandeWoude  
 **18:45-19:30** | 10 Attendee Presentations
