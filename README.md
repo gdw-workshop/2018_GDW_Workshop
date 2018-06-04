@@ -38,7 +38,7 @@ Time | Activity
 **13:15-14:15** | 10 Attendee Presentations
 **14:15-15:15** | [BLAST exercises](./exercises/Blast_exercise.md), Bob Fitak and Mark Stenglein
 **15:15-15:35** | Coffee Break
-**15:35-17:00** | [Databases](./lectures/Stenglein_databases_lecture.pdf) and [data quality control lectures](./lectures/Fitak_GWD2017_NGS-QC.pdf) and [exercises](./exercises/download_exercise.md), Mark Stenglein and Bob Fitak
+**15:35-17:00** | [Databases](./lectures/Stenglein_databases_lecture.pdf) and [data quality control lectures](./lectures/Fitak_GWD2018_NGS-QC.pdf) and [exercises](./exercises/download_exercise.md), Mark Stenglein and Bob Fitak
 **17:00-19:00** | Free time and dinner, Rams Horn Dining Center 
 **19:30-20:30** | Plenary Speaker, Tracey Goldstein University of California-Davis, Longs Peak Room 
 **20:30-21:30** | Social Hour with Invited Speaker
