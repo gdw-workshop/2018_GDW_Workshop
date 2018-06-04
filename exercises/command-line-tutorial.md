@@ -153,7 +153,7 @@ Notice again our use of the `..`.  Nice and quick, eh?  Way easier than dragging
 
 ### Step 7:  Viewing files
 Since you made all those files, why not look at what's inside?  You could always double-click and open them in a text editor, but this would be boring.  There are many ways to open them on the command line, a few are outlined below.  Try what works best for you:  
-Print the entire file to the screen (NOTE: Not recommended very large files)
+Print the entire file to the screen (NOTE: Not recommended for very large files)
 ```
 cat Desktop.txt
 ```
@@ -182,7 +182,7 @@ Preview a file one page at a time (the page size is defined by the size of the t
 ```
 less Desktop.txt
 ```
-While the file is open in less, you can scroll up or down the file by using the up or down arrow keys, or move one page at a time using the space key.  However, this file is small so the entire contents are shown.  
+While the file is open in `less`, you can scroll up or down the file by using the up or down arrow keys, or move one page at a time using the space key.  However, this file is small so the entire contents are shown.  
 Enter `q` to quit the 'less' viewer.
 
 ### Step 8:  Printing custom text
@@ -219,3 +219,36 @@ rm -r Practice
 ```
 Is the `Practice` directory still there?  
 ### Note:  When it is deleted, it is gone for good.  It is not in the trash or Recycle bin.
+
+### Great job with the tutorial!  Now everyone is a seasoned computer wizard!
+Below are some extra tips, commands to check out, and links to additional resources to examine in your free time!
+
+#### Extra features/tips to help you out:
+- use the Up-arrow to recall your previous commands
+- use the `tab` key to complete the name of a file or program name after typing part of it
+- a command is stuck?  Quit the command using `ctrl+c`
+- `ctrl+a` to go the beginning of a command line
+- `ctrl+e` to go the end of a line
+- `ctrl+u` to delete text you have typed at the command line
+- Remember, the command line is CASE SENSITIVE, so `file` and `File` are different things!
+
+#### Extra commands you may come across often:
+
+Count the number of lines in a file:
+```
+wc -l file
+```
+
+Search a file for a specific pattern (e.g., ATGC):
+```
+grep "ATGC" file
+```
+This command returns the lines that match the pattern  
+
+
+#### Useful links for additional UNIX tutorials or resources:
+- [Another short beginner's tutorial](https://dbsloan.github.io/TS2018/exercises/unix_commands.html)
+- [A good set of tutorials](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+- [Highly recommended tutorials for beginners to novice, complete with graphics](https://swcarpentry.github.io/shell-novice/)
+- [cheat sheet 1](./cheatsheet1.pdf)
+- [cheat sheet 2](./cheatsheet2.pdf)
