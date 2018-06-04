@@ -234,6 +234,17 @@ Below are some extra tips, commands to check out, and links to additional resour
 
 #### Extra commands you may come across often:
 
+Is your terminal screen a bit cluttered? Use this command:
+```
+clear
+```
+
+Want to see your command history?
+```
+history
+```
+Note:  You can also use the "up arrow" as mentioned above
+
 Count the number of lines in a file:
 ```
 wc -l file
