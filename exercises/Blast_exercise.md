@@ -82,7 +82,7 @@ This should be saved in the downloads folder as "sequence.fasta"
 Now let's BLAST!!!
 ```
 # First, let's make sure we are starting from the Desktop
-cd ~/Desktop
+cd /Users/instructor/Desktop
 
 # Make a new folder and move into it
 mkdir BLAST_PRACTICE
@@ -163,7 +163,7 @@ From the above link:
 - Click and download fasta link (GECA01.1.fsa\_nt.gz)
 - Move the downloaded file into your current directory
 ```
-mv ~/Downloads/GECA01.1.fsa_nt.gz .
+mv /Users/instructor/Downloads/GECA01.1.fsa_nt.gz .
 ```
 
 Alternatively, you can download directly from the command line using the command below:
@@ -196,14 +196,14 @@ What do the output files look like?  Can you open them?
 Let's select some random sequences from the transcriptome to use as a query.  We will use the [seqtk](https://github.com/lh3/seqtk) toolkit from Heng Li. This toolkit is fast and a standard for basic processing of sequence files (fasta and fastq).
 ```
 # Get a list of the subprograms in 'seqtk'
-~/Desktop/GDW_Apps/seqtk-master/seqtk
+/Users/instructor/Desktop/GDW_Apps/seqtk-master/seqtk
 
 # Get the manual for a particular sub-program of 'seqtk'
-~/Desktop/GDW_Apps/seqtk-master/seqtk sample
-~/Desktop/GDW_Apps/seqtk-master/seqtk seq
+/Users/instructor/Desktop/GDW_Apps/seqtk-master/seqtk sample
+/Users/instructor/Desktop/GDW_Apps/seqtk-master/seqtk seq
 
 # Select 5 sequences at random
-~/Desktop/GDW_Apps/seqtk-master/seqtk sample GECA01.1.fsa_nt 5 > sample5.fasta
+/Users/instructor/Desktop/GDW_Apps/seqtk-master/seqtk sample GECA01.1.fsa_nt 5 > sample5.fasta
 
 # Remember how to check the number of sequences?
 grep -c "^>" sample5.fasta
