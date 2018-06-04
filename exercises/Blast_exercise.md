@@ -31,7 +31,7 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 
 We will be using the 'terminal' on the mac. Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.  
 Open up the terminal as you learned previously.  
-Here is a quick reminder of some basic commands (no need to enter them now):
+Here is a quick reminder of some basic commands (no need to enter them now).
 ```
 # How to get the manual or help menu for a command/program ("grep" example)
 man grep
@@ -67,6 +67,7 @@ grep "abc" file
 # Select a column from a delimited ("tab" by default)
 cut -f3 file
 ```
+Notice that there are lines above that begin with `#`.  These are called "comments", and are ignored by the command line, so you can copy and paste them along with any commands.  
 
 ## Part 1:  Remote BLAST
 When we blast "remotely", we are using our command line to submit a blast search to the NCBI server.
@@ -80,6 +81,9 @@ Select -> Send To -> File -> Format: fasta
 This should be saved in the downloads folder as "sequence.fasta"  
 Now let's BLAST!!!
 ```
+# First, let's make sure we are starting from the Desktop
+cd ~/Desktop
+
 # Make a new folder and move into it
 mkdir BLAST_PRACTICE
 cd BLAST_PRACTICE
@@ -157,8 +161,12 @@ From the above link:
 - Click on contig link at bottom (To the right of "TSA"), it looks like [GECA01000001-GECA01039180](https://www.ncbi.nlm.nih.gov/Traces/wgs?val=GECA01)
 - Go to download tab
 - Click and download fasta link (GECA01.1.fsa\_nt.gz)
+- Move the downloaded file into your current directory
+```
+mv ~/Downloads/GECA01.1.fsa_nt.gz .
+```
 
-Alternatively, you can download from the command line using the command below:
+Alternatively, you can download directly from the command line using the command below:
 ```
 curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
 ```
