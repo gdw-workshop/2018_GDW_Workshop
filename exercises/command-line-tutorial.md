@@ -17,7 +17,7 @@ Here we will briefly learn how to interact with a UNIX computer via the command 
 6. move or renames files: `mv`
 7. open or view files `cat`, `head`, `tail`, `more`, `less`
 8. print text to the screen or to files: `echo`
-9. remove files or directories: `rm` or `rmdir`
+9. remove files or directories: `rm`
 
 Before we begin, you will need to open the 'terminal' on your MacBook Pro computers.  Simply search for \"terminal\" using the magnifying glass in the upper right-hand corner and select the terminal application.  See the red arrow in the image below:  
 
@@ -128,9 +128,94 @@ ls -l .. > Desktop.txt
 Feel free to check the contents of the folder using the `ls` command, or you can also double click on the folder in the Desktop to compare.
 
 ### Step 5: Copying files
+To make an identical copy of a file, use:
+```
+cp Desktop.txt Desktop.copy.txt
+```
+That's it!  Easy!  
+Try making a copy again but placing the copy on the Desktop:
+```
+cp Desktop.txt ../Desktop.contents.txt
+```
+Notice the copy is now put in the Desktop directory, and the copy now has a different name.  We will delete it later...  
 
+### Step 6:  Moving or renaming files
+To rename a file, you use a similar syntax to the `cp` command above:
+```
+mv Desktop.copy.txt Desktop.deleteme.txt
+```
+Now, let's move this renamed file to the Desktop:
+```
+mv Desktop.deleteme.txt ..
+```
+Notice again our use of the `..`.  Nice and quick, eh?  Way easier than dragging and dropping, am I right? (OK... we can perhaps agree to disagree.  But if you have to do that operation 10,000 times...?)
+### Hint:  You can actually drag and drop files and folders from your GUI into the terminal.  Try it out with the `ls` command and the `Practice` folder if you dare!
 
+### Step 7:  Viewing files
+Since you made all those files, why not look at what's inside?  You could always double-click and open them in a text editor, but this would be boring.  There are many ways to open them on the command line, a few are outlined below.  Try what works best for you:  
+Print the entire file to the screen (NOTE: Not recommended very large files)
+```
+cat Desktop.txt
+```
 
+Print the first 10 lines of a file:
+```
+head Desktop.txt
+```
 
+Print the first 5 lines of a file:
+```
+head -n 5 Desktop.txt
+```
 
+Print the last 10 lines of a file:
+```
+tail Desktop.txt
+```
 
+Print the last 3 lines of a file:
+```
+tail -n 3 Desktop.txt
+```
+
+Preview a file one page at a time (the page size is defined by the size of the terminal window):
+```
+less Desktop.txt
+```
+While the file is open in less, you can scroll up or down the file by using the up or down arrow keys, or move one page at a time using the space key.  However, this file is small so the entire contents are shown.  
+Enter `q` to quit the 'less' viewer.
+
+### Step 8:  Printing custom text
+You can use the `echo` command to print to the screen:
+```
+echo "I love NGS"
+```
+or to write new, custom text into a file:
+```
+echo "I love NGS" > custom.txt
+```
+You can then use the `>>` to add new content to an existing file:
+```
+echo "But Sanger sequencing is cool too" >> custom.txt
+```
+Feel free to add your own custom content to the file above.  Make sure to view the file above using the `cat` or `less` commands above to make sure you did it correctly!
+
+# Step 9:  Removing files or directories
+You can delete a file using the `rm` command:
+```
+rm custom.txt
+```
+Is it gone?  Use the `ls` command to check.  
+Remove the two files we put into the Desktop:
+```
+rm ../Desktop.deleteme.txt
+rm ../Desktop.contents.txt
+```
+Are they still on the Desktop?  
+Finally, change back into the Desktop and remove the entire `Practice` directory:
+```
+cd ..
+rm -r Practice
+```
+Is the `Practice` directory still there?  
+### Note:  When it is deleted, it is gone for good.  It is not in the trash or Recycle bin.
