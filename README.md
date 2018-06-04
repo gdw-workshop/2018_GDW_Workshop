@@ -33,7 +33,7 @@ Time | Activity
 **08:35-09:30** | [Intro to genomics and NGS](./lectures/Stenglein_introduction_to_genomics_and_sequencing_lecture.pdf), Mark Stenglein 
 **09:30-10:00** | CSU Flash Talk, Christie Mayo
 **10:00-10:20** | Coffee Break and Meet Invited Speaker
-**10:20-12:15** | [Command Line](./exercises/command-line-tutorial.md) and [BLAST](./lectures/Fitak_GWD2018_Blast.pdf), Bob Fitak and Mark Stenglein
+**10:20-12:15** | [Command line lecture](./lectures/Fitak_GWD2018_CommandLine.pdf), [Command Line Exercise](./exercises/command-line-tutorial.md) and [BLAST lecture](./lectures/Fitak_GWD2018_Blast.pdf), Bob Fitak
 **12:15-13:15** | Lunch Provided Onsite
 **13:15-14:15** | 10 Attendee Presentations
 **14:15-15:15** | [BLAST exercises](./exercises/Blast_exercise.md), Bob Fitak and Mark Stenglein
