@@ -29,8 +29,9 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 - rpsblast
 - tblastx
 
-We will be using the 'terminal' on the mac.  The terminal is how we interact with the computer without a user interface. Everyone here has various degrees of experience with the command line, so, especially in the beginning, I will try and explain some basics as we progress.  Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.
-Here are some basic commands we will use for reference.  We will learn more along the way:
+We will be using the 'terminal' on the mac. Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.  
+Open up the terminal as you learned previously.  
+Here is a quick reminder of some basic commands (no need to enter them now):
 ```
 # How to get the manual or help menu for a command/program ("grep" example)
 man grep

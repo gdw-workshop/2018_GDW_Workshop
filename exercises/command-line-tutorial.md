@@ -243,9 +243,24 @@ Search a file for a specific pattern (e.g., ATGC):
 ```
 grep "ATGC" file
 ```
-This command returns the lines that match the pattern  
+The above command returns the lines that match the pattern  
 
+Show various columns of a tab-delimited file (e.g., a spreadsheet):
+```
+# Second column
+cut -f2 file
 
+# First and fifth column
+cut -f1,5 file
+
+# Third through the seventh columns
+cut -f3-7 file
+
+# Same as above, but for a comma-delimited file (e.g., csv file)
+cut -d"," -f3-7 file.csv
+```
+
+  
 #### Useful links for additional UNIX tutorials or resources:
 - [Another short beginner's tutorial](https://dbsloan.github.io/TS2018/exercises/unix_commands.html)
 - [A good set of tutorials](http://www.ee.surrey.ac.uk/Teaching/Unix/)
