@@ -267,3 +267,4 @@ cut -d"," -f3-7 file.csv
 - [Highly recommended tutorials for beginners to novice, complete with graphics](https://swcarpentry.github.io/shell-novice/)
 - [cheat sheet 1](./cheatsheet1.pdf)
 - [cheat sheet 2](./cheatsheet2.pdf)
+- [cheat sheet 3](./cheatsheet3.pdf)
