@@ -200,7 +200,7 @@ echo "But Sanger sequencing is cool too" >> custom.txt
 ```
 Feel free to add your own custom content to the file above.  Make sure to view the file above using the `cat` or `less` commands above to make sure you did it correctly!
 
-# Step 9:  Removing files or directories
+### Step 9:  Removing files or directories
 You can delete a file using the `rm` command:
 ```
 rm custom.txt
