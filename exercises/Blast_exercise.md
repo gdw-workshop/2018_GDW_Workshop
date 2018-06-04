@@ -29,8 +29,9 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 - rpsblast
 - tblastx
 
-We will be using the 'terminal' on the mac.  The terminal is how we interact with the computer without a user interface. Everyone here has various degrees of experience with the command line, so, especially in the beginning, I will try and explain some basics as we progress.  Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.
-Here are some basic commands we will use for reference.  We will learn more along the way:
+We will be using the 'terminal' on the mac. Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.  
+Open up the terminal as you learned previously.  
+Here is a quick reminder of some basic commands (no need to enter them now).
 ```
 # How to get the manual or help menu for a command/program ("grep" example)
 man grep
@@ -66,6 +67,7 @@ grep "abc" file
 # Select a column from a delimited ("tab" by default)
 cut -f3 file
 ```
+Notice that there are lines above that begin with `#`.  These are called "comments", and are ignored by the command line, so you can copy and paste them along with any commands.  
 
 ## Part 1:  Remote BLAST
 When we blast "remotely", we are using our command line to submit a blast search to the NCBI server.
@@ -79,6 +81,9 @@ Select -> Send To -> File -> Format: fasta
 This should be saved in the downloads folder as "sequence.fasta"  
 Now let's BLAST!!!
 ```
+# First, let's make sure we are starting from the Desktop
+cd /Users/instructor/Desktop
+
 # Make a new folder and move into it
 mkdir BLAST_PRACTICE
 cd BLAST_PRACTICE
@@ -156,8 +161,12 @@ From the above link:
 - Click on contig link at bottom (To the right of "TSA"), it looks like [GECA01000001-GECA01039180](https://www.ncbi.nlm.nih.gov/Traces/wgs?val=GECA01)
 - Go to download tab
 - Click and download fasta link (GECA01.1.fsa\_nt.gz)
+- Move the downloaded file into your current directory
+```
+mv /Users/instructor/Downloads/GECA01.1.fsa_nt.gz .
+```
 
-Alternatively, you can download from the command line using the command below:
+Alternatively, you can download directly from the command line using the command below:
 ```
 curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
 ```
@@ -187,14 +196,14 @@ What do the output files look like?  Can you open them?
 Let's select some random sequences from the transcriptome to use as a query.  We will use the [seqtk](https://github.com/lh3/seqtk) toolkit from Heng Li. This toolkit is fast and a standard for basic processing of sequence files (fasta and fastq).
 ```
 # Get a list of the subprograms in 'seqtk'
-~/Desktop/GDW_Apps/seqtk-master/seqtk
+/Users/instructor/Desktop/GDW_Apps/seqtk/seqtk
 
 # Get the manual for a particular sub-program of 'seqtk'
-~/Desktop/GDW_Apps/seqtk-master/seqtk sample
-~/Desktop/GDW_Apps/seqtk-master/seqtk seq
+/Users/instructor/Desktop/GDW_Apps/seqtk/seqtk sample
+/Users/instructor/Desktop/GDW_Apps/seqtk/seqtk seq
 
 # Select 5 sequences at random
-~/Desktop/GDW_Apps/seqtk-master/seqtk sample GECA01.1.fsa_nt 5 > sample5.fasta
+/Users/instructor/Desktop/GDW_Apps/seqtk/seqtk sample GECA01.1.fsa_nt 5 > sample5.fasta
 
 # Remember how to check the number of sequences?
 grep -c "^>" sample5.fasta

@@ -33,12 +33,12 @@ Time | Activity
 **08:35-09:30** | [Intro to genomics and NGS](./lectures/Stenglein_introduction_to_genomics_and_sequencing_lecture.pdf), Mark Stenglein 
 **09:30-10:00** | CSU Flash Talk, Christie Mayo
 **10:00-10:20** | Coffee Break and Meet Invited Speaker
-**10:20-12:15** | Command Line and [BLAST](./lectures/Fitak_GWD2017_Blast.pdf), Bob Fitak and Mark Stenglein
+**10:20-12:15** | [Command line lecture](./lectures/Fitak_GWD2018_CommandLine.pdf), [Command Line Exercise](./exercises/command-line-tutorial.md) and [BLAST lecture](./lectures/Fitak_GWD2018_Blast.pdf), Bob Fitak
 **12:15-13:15** | Lunch Provided Onsite
 **13:15-14:15** | 10 Attendee Presentations
 **14:15-15:15** | [BLAST exercises](./exercises/Blast_exercise.md), Bob Fitak and Mark Stenglein
 **15:15-15:35** | Coffee Break
-**15:35-17:00** | [Databases](./lectures/Stenglein_databases_lecture.pdf) and [data quality control lectures](./lectures/Fitak_GWD2017_NGS-QC.pdf) and [exercises](./exercises/download_exercise.md), Mark Stenglein and Bob Fitak
+**15:35-17:00** | [Databases](./lectures/Stenglein_databases_lecture.pdf) and [data quality control lectures](./lectures/Fitak_GWD2018_NGS-QC.pdf) and [exercises](./exercises/download_exercise.md), Mark Stenglein and Bob Fitak
 **17:00-19:00** | Free time and dinner, Rams Horn Dining Center 
 **19:30-20:30** | Plenary Speaker, Tracey Goldstein University of California-Davis, Longs Peak Room 
 **20:30-21:30** | Social Hour with Invited Speaker
