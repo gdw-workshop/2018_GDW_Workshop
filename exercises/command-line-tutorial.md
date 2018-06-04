@@ -69,7 +69,7 @@ Piece of cake, huh!
 ### Step3: listing contents
 Now we will look at see which directories and files are inside of a folder.  But first, let's move back to the Desktop.
 ```
-cd Desktop
+cd ../Desktop
 ```
 
 Now, enter the command:
