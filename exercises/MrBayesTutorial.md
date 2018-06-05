@@ -169,11 +169,11 @@ Now we will summarize the sampled parameter from the two independent runs in ord
 ```
 # summarize sampled parameters
 
-Mr. Bayes > sump
+MrBayes > sump
 
 # summarize sampled trees
 
-Mr. Bayes > sumt
+MrBayes > sumt
 ```
 
 Now there should be a file with the original input file name with the extension *con.tre*, which is the consensus phylogenetic tree that contains credibility values (posterior support statistic for nodes/branch points), and branch lengths (in units of substitutions per site).
