@@ -118,7 +118,6 @@ The instructors have already downloaded an assembly of the boa constrictor genom
 
 First, let's transfer the bowtie index from the HDD to your working folder:
 ```
-# UPDATED AGAIN! :)
 cp /Users/instructor/Desktop/GDW_Data/boa_constrictor_bt_index* .
 ```
 
