@@ -25,7 +25,7 @@ Are the viral populations geographically structured?  …temporally structured?
 
 Download the all of the files from the following folder and place them in the GDW_Data
 
-[link] (https://drive.google.com/drive/folders/1T5N3vGdl8YYiLSFsm8vxrxph0JRhCEgy?usp=sharing)
+https://drive.google.com/drive/folders/1T5N3vGdl8YYiLSFsm8vxrxph0JRhCEgy?usp=sharing
 
 Open a terminal window and cd to GDW_Data.
 
