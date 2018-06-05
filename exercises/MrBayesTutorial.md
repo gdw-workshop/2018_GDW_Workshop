@@ -199,6 +199,7 @@ A1: We just set the primary data-type of our alignment to *codon* (vs. protein o
 
 A2: Take a look at the following fictionalized parameter space where the x- and y-axes are combinations of parameter values and the z-axis is the likelihood of the nucleotide alignment given the values.  In this example, there are n=3 separate chains sampling the parameter space.
 
+![alt text](https://drive.google.com/open?id=1buolaLL07VB0jnhJGfoOSl7ulSltY2Nf "likelihood landscape")
 
 Having multiple chains simultaneously sampling the parameter space makes it more likely that the absolute maximum likelihood (highest hill on the landscape) will be found.  This is accomplished by two mechanisms.  First, more of the parameter space can be sampled since 4 chains starting from 4 different *locations* are moving independently across the space.  Second, it allows chains to *swap* from one position on the landscape to another if the latter is in an area of higher likelihood.  This allows chains stuck on a local optimum (i.e. the green chain above) to explore other areas on the landscape by *jumping* the valleys between different hills.
 
