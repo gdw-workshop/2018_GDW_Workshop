@@ -49,8 +49,8 @@ Time | Activity
 --- | ---
 **07:00–08:00** | Breakfast, Rams Horn Dining Center
 **08:15-08:25** | Step 2: Best Practices for Generating Quality Genomes of Host and Pathogen
-**08:25-09:30** | [Mapping to Reference Genomes](./lectures/Fitak_GWD2017_Mapping.pdf), Bob Fitak
-**09:30-10:00** | Invited spakear, Jeff Foster, White Nose and bats
+**08:25-09:30** | [Mapping to Reference Genomes](./lectures/Fitak_GWD2018_Mapping.pdf), Bob Fitak
+**09:30-10:00** | Invited speaker, Jeff Foster, White Nose and bats
 **10:00-10:20** | Coffee Break and Meet Invited Speaker
 **10:20-11:15** | [Mapping Exercises](./exercises/mapping_assembly_exercise.md), Bob Fitak and Mark Stenglein
 **11:15-12:15** | [Genome Assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf), Mark Stenglein
