@@ -36,7 +36,7 @@ Open a terminal window and cd to GDW_Data.
 > mb
 ```
 
-if Mr. Bayes started properly you should now see some information about the version of Mr. Bayes you are using and that the prompt has changed.
+If Mr. Bayes started properly you should now see some information about the version of Mr. Bayes you are using and that the prompt has changed.
 ```
 # load today’s dataset (note: there are two very similar .nex files so please use this one first)
 
@@ -85,7 +85,7 @@ For today’s tutorial we will modify a few parameters of the likelihood and nuc
 MrBayes > lset nucmodel=codon nst=6 rates=invgamma
 ```
 
-Q1: What parameters did we just modify, what did we change them to, and why would we choose these values?
+### Q1: What parameters did we just modify, what did we change them to, and why would we choose these values?
 
 ```
 # Now you check to see that your current list of parameters priors match what you entered:
@@ -122,7 +122,7 @@ MrBayes > help mcmcp
 
 I’d like to make mention of a few of the parameters listed to help explain how Mr. Bayes works.  Nchains is the number of MCMC chains that are sampling the parameter space throughout the run.  The default of 4 chains means that 4 separate MCMC instances are occurring simultaneously for each run.  Each chain stars from a different random starting tree and samples different parameter values (such as tree topology, branch lengths, substitution rates, etc.) at each step and navigates the parameter space by moving toward values that increase the likelihood of the data given the sampled parameter values.  
 
-Q2: Why are multiple chains used to sample the parameter space during an analysis in Mr. Bayes?
+### Q2: Why are multiple chains used to sample the parameter space during an analysis in Mr. Bayes?
 
 The *mcmcp* command is used to modify the mcmc parameters prior to starting the run. 
 
@@ -136,7 +136,9 @@ MrBayes > help mcmcp
 MrBayes > mcmcp ngen=20000 samplefreq=200 diagnfreq=500 burninfrac=0.20
 ```
 
-Here, we have changed the number of steps in the MCMC chain to 20,000, will be sampling every 200 steps in the chain, and will be comparing the similarity/difference of the tree samples between the two runs every 500 steps in the chain.  We also set the burn-in period equal to 20% of the total samples collected.  Q3: What the hell is *burn-in*?
+Here, we have changed the number of steps in the MCMC chain to 20,000, will be sampling every 200 steps in the chain, and will be comparing the similarity/difference of the tree samples between the two runs every 500 steps in the chain.  We also set the burn-in period equal to 20% of the total samples collected.  
+
+### Q3: What the hell is *burn-in*?
 
 Ok.  Now lets check to see that all of the parameters we wanted to change were indeed set to the values we wanted.
 
@@ -158,7 +160,7 @@ Given the short time we have for this tutorial today I’ve got files for you to
 
 
 
-Open another terminal tab or window.  
+## Open another terminal tab or window.  
 
 Load the following file into Mr. Bayes: PLVAB_aln_mb_2.nex. (Can you remember how to do this?)
 
@@ -193,7 +195,7 @@ Are the viral populations geographically structured?  …temporally structured?
 
 
 
-Brief answers to the above questions…
+## Brief answers to the above questions…
 
 A1: We just set the primary data-type of our alignment to *codon* (vs. protein or non-coding nucleotides), set the nucleotide substitution model to the general-time reversible model (*nst=6*), and we allowed the rate of substitutions to vary according to a gamma distribution with some invariable sites (*invgamma*).  
 
