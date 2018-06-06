@@ -184,7 +184,7 @@ A pop up window will appear...click ok.  This is your chance to change any addit
 Wahoo!  Step one done!
 
 
-## Open BEAST (also located in GDW-Apps)
+## Open BEAST (also located in GDW-Apps/BEAST/)
 
 
 Load your newly created *file.xml*.  
@@ -200,7 +200,7 @@ Easy compared to BEAUTi right?
 While that is running…
 
 
-## Open Tracer (in GDW-Apps)
+## Open Tracer (in GDW-Apps/Tracer/)
 
 
 File > Import Trace File 
@@ -247,7 +247,7 @@ You can also select two parameters (by holding command) and then click on *Joint
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
 
-## Open TreeAnnotator
+## Open TreeAnnotator (in GDW-Apps/BEAST)
 
 
 Go down toward the bottom and choose your input file which is one of the files output from BEAST ending in *.trees*.
@@ -279,7 +279,7 @@ Pretty cool right?
 Now let’s open the MCC tree and check it out.  This is the moment we’ve been working towards.  Exciting I know.
 
 
-## Open FigTree (within a separate folder in GDW_Apps)
+## Open FigTree (in GDW_Apps/FigTree/)
 
 
 Use File > Open 
