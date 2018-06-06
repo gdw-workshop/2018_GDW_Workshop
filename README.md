@@ -79,7 +79,7 @@ Time | Activity
 **12:15-13:15** | Lunch Provided Onsite
 **13:15-15:15** | Phylogenomic Reconstruction Lab: jModeltest PAUP, MEGA, ML ME MP, Jill Pecon Slattery & Justin Lee
 **15:15-15:25** | Coffee Break
-**15:25-15:50** | Phylogenomic Reconstruction Lab: [MrBayes](.exercises/MrBayesTutorial.md), Justin Lee
+**15:25-15:50** | Phylogenomic Reconstruction Lab: [MrBayes](./exercises/MrBayesTutorial.md), Justin Lee
 **15:50-17:00** | Field Trip to CSU Veterinary Hospital
 **17:30-19:00** | Free time and dinner, Rams Horn Dining Center 
 **19:30-20:30** | Optional computer time office hours with Instructors
