@@ -10,25 +10,25 @@ Download all of the files in this folder and place them in a convenient director
 
 ##  Second.  Some helpful resources.  Some of these are more essential than helpful!
 
-Keep the manual in hand and refer to it often when using Beast!  It comes with the main Beast package when you download it but you can also download it here: 
+Keep the manual in hand and refer to it often when using BEAST!  It comes with the main BEAST package when you download it but you can also download it here: 
 
-http://www.molecularevolution.org/molevolfiles/beast/BEAST14_MANUAL-7-6-07
-
-
-There is a great Beast user forum, which should be your first place to go when you run into a roadblock.  Chances are others have had the same issue so the answer may already be there but if not, you can post your question and someone will probably answer you soon.
-
-https://groups.google.com/forum/#!forum/beast-users
+http://www.molecularevolution.org/molevolfiles/BEAST/BEAST14_MANUAL-7-6-07
 
 
-There are great tutorials online for most of the analyses Beast can perform so if you want to learn how to do more cool stuff with the program check them out: 
+There is a great BEAST user forum, which should be your first place to go when you run into a roadblock.  Chances are others have had the same issue so the answer may already be there but if not, you can post your question and someone will probably answer you soon.
 
-http://beast.bio.ed.ac.uk/tutorials
+https://groups.google.com/forum/#!forum/BEAST-users
 
-If you don’t want to bog down your computer for days to weeks when running Beast on large datasets there is an open access server online.  All you need is your Beast input file (which you are about to learn how to make!).
+
+There are great tutorials online for most of the analyses BEAST can perform so if you want to learn how to do more cool stuff with the program check them out: 
+
+http://BEAST.bio.ed.ac.uk/tutorials
+
+If you don’t want to bog down your computer for days to weeks when running BEAST on large datasets there is an open access server online.  All you need is your BEAST input file (which you are about to learn how to make!).
 
 https://www.phylo.org/
 
-Finally, there is a book from the creators of Beast that provides background on many of the core functions of the software and goes into more detail about parameters, priors, etc.  I find it extremely useful to keep it by my side when using Beast.
+Finally, there is a book from the creators of BEAST that provides background on many of the core functions of the software and goes into more detail about parameters, priors, etc.  I find it extremely useful to keep it by my side when using BEAST.
 
 *Bayesian Evolutionary Analysis with BEAST* – Alexei J. Drummond and Remco R. Bouckaert (ISBN-13: 978-1107019652)
 
@@ -36,17 +36,17 @@ Finally, there is a book from the creators of Beast that provides background on 
 
 ## Generating trees in BEAST is a multi-step process
 
-Today we are going to (re)use an alignment of feline immunodeficiency virus isolates to build a dated tree in Beast and along the way learn all of the additional programs that are necessary when using Beast.
+Today we are going to (re)use an alignment of feline immunodeficiency virus isolates to build a dated tree in BEAST and along the way learn all of the additional programs that are necessary when using BEAST.
 
 As a quick reminder from my overview earlier...
 
-BEAUti (Bayesian Evolutionary Analysis Utility) is a program that is used to create the input file for Beast.  This is where you will select the type of analysis you want to run and the provide information about priors for the parameters that the analysis will be estimating.  The output of Beauti is an xml file that can be modified manually for customized BEAST runs.
+BEAUti (Bayesian Evolutionary Analysis Utility) is a program that is used to create the input file for BEAST.  This is where you will select the type of analysis you want to run and the provide information about priors for the parameters that the analysis will be estimating.  The output of Beauti is an xml file that can be modified manually for customized BEAST runs.
 
 BEAST (Bayesian Evolutionary Analysis Sampling Trees) uses a Bayesian MCMC algorithm to produce rooted phylogenetic trees and estimate many values for evolutionarily important parameters along the trees (node dates, evolutionary rates, etc.).
 
-Tracer is a program used to evaluate .log files that are produced during a Beast run so that you can evaluate the quality of the MCMC run and the quality of the output parameter estimates.  
+Tracer is a program used to evaluate .log files that are produced during a BEAST run so that you can evaluate the quality of the MCMC run and the quality of the output parameter estimates.  
 
-TreeAnnotator will find the *best* tree from the thousands of trees sampled during the Beast MCMC run and summarizes posterior parameter estimates on the tree.
+TreeAnnotator will find the *best* tree from the thousands of trees sampled during the BEAST MCMC run and summarizes posterior parameter estimates on the tree.
 
 FigTree is used to visualize the final tree and can be used to label nodes, branches, etc. for publication.
 
@@ -61,7 +61,7 @@ FigTree is used to visualize the final tree and can be used to label nodes, bran
 
 # Ok.  Lets get Started!
 
-Go to the Beast folder in the GDW-Apps on your desktop.  All of the following programs are located here except for FigTree which is in its own folder within GDW-Apps.
+Go to the BEAST folder in the GDW-Apps on your desktop.  All of the following programs are located here except for FigTree which is in its own folder within GDW-Apps.
 
 ## Open Beauti
 
@@ -136,9 +136,9 @@ Click on the *MCMC* tab.
 
 Set the length of the chain to 1,000,000 and log the parameter estimates every 1,000.  These numbers are inadequate but it will let you get output files fast (and I have an output file from longer chains we can look at :)). 
 
-[As a rule of thumb you want to end up with 10,000 logged parameters/trees at the end of a Beast run. This means that if you run the chain for 10^8 steps you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start. There are reasons we will get into later why you’d want to log more frequently too.]
+[As a rule of thumb you want to end up with 10,000 logged parameters/trees at the end of a BEAST run. This means that if you run the chain for 10^8 steps you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start. There are reasons we will get into later why you’d want to log more frequently too.]
 
-You can change the output file stem name if you want or leave it as is. If you start to do multiple combinations of Beauti parameters and Beast runs from the same alignment file it is nice to label the output differently.  I use numbers, then letters, then obscenities in that order as I go through the process many times until it comes out right! 
+You can change the output file stem name if you want or leave it as is. If you start to do multiple combinations of Beauti parameters and BEAST runs from the same alignment file it is nice to label the output differently.  I use numbers, then letters, then obscenities in that order as I go through the process many times until it comes out right! 
 
 Ok.  Click *Generate BEAST File* and save it where you want.
 
@@ -146,11 +146,11 @@ A pop up window will appear…click ok.  This is your chance to change any addit
 
 Wahoo!  Step one done!
 
-## Open Beast
+## Open BEAST
 
 Load your newly created *file.xml*.  Unclick the *Use Beagle* option and leave the rest of it at default.  Select *Run* and you are off to the races.  Easy compared to Beauti right?
 
-[If you didn’t make it through Beauti or if you run into errors when you run Beast, you downloaded a BEAST input file that will work so go to your directory and find *PLVAB_aln_GDW.xml* and use it to run Beast.
+[If you didn’t make it through Beauti or if you run into errors when you run BEAST, you downloaded a BEAST input file that will work so go to your directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
 
 While that is running…
 
@@ -158,13 +158,13 @@ While that is running…
 ## Open Tracer
 
 File > Import Trace File 
-	Select your *file_stem.log* file that is in progress from your current Beast run (yes you can view it before the Beast run is complete).   You should also open *PLVAB_aln_GDW.log* which is a Beast output file from the same alignment we used earlier but with a few extra parameter estimates.  It will work well to let you see what a log file will look like after the end of a sufficiently long MCMC chain.
+	Select your *file_stem.log* file that is in progress from your current BEAST run (yes you can view it before the BEAST run is complete).   You should also open *PLVAB_aln_GDW.log* which is a BEAST output file from the same alignment we used earlier but with a few extra parameter estimates.  It will work well to let you see what a log file will look like after the end of a sufficiently long MCMC chain.
 
 You can also drag and drop files into the *Trace Files* area and open multiple trace files simultaneously to compare runs.
 
 Look at the mean posterior estimate of each parameter value within the ‘Traces’ pane on the bottom left…do they make sense?  Ok.  Probably none of this will make sense because you don’t know much about the dataset used but this is where you will evaluate parameter estimates to make sure they make sense when you analyze your own data!  This is a good time to go back to the prior distributions and values we entered into BEAUTi to see how our choices may have influenced the outcome, or which parameter estimates may be wildy different than we thought they would be.
 
-The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  If this is less than 100 it will be red to give you a warning that estimates should not be trusted.  Between 100 and 200 they are yellow…caution.  Above 200 is considered acceptable and there is likely little benefit to going beyond that.  To increase low ESS values you can: 1) run your chain longer (remember where you change this setting in BEAUTi?), 2) sample your chain more frequently, 3) run multiple independent runs of Beast and combine them (not covered here but you use LogCombiner to do this), 4) chose a less complex model as your data may not be informative enough for highly complex parameter estimates.
+The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  If this is less than 100 it will be red to give you a warning that estimates should not be trusted.  Between 100 and 200 they are yellow…caution.  Above 200 is considered acceptable and there is likely little benefit to going beyond that.  To increase low ESS values you can: 1) run your chain longer (remember where you change this setting in BEAUTi?), 2) sample your chain more frequently, 3) run multiple independent runs of BEAST and combine them (not covered here but you use LogCombiner to do this), 4) chose a less complex model as your data may not be informative enough for highly complex parameter estimates.
 
 You can visualize the distribution/frequency of values sampled throughout the length of the MCMC chain by clicking on the tabs above the right pane.  The *Trace* is especially useful to view in order to know if you have achieved good sampling of the posterior…it should look like a ‘spiny caterpillar’ (or at least that’s how it was taught to me).  You can also select two parameters (by holding command) and then click on *Joint Marginal* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values…were we correct to estimate these codon partitions separately? Do the same for CP1+2 and CP3 mu values.  Thoughts?  What does this say about the flexibility of different codon positions to mutate/evolve over time?
 
@@ -172,9 +172,9 @@ Ok.  Spend as much time as you want with Tracer but when you’re ready let’s 
 
 Open TreeAnnotator
 
-Go down toward the bottom and choose your input file which is one of the files output from Beast ending in *.trees*.
+Go down toward the bottom and choose your input file which is one of the files output from BEAST ending in *.trees*.
 	
-I have a file you can use here as well since your Beast run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW.trees*
+I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW.trees*
 
 
 Choose your output file name ending with *.tre* and the location you want to save it. 
