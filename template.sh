@@ -134,12 +134,12 @@ echo "Beginning blast search of top 5 contigs..."
 # Remember the pipe????
 
 
-# Finally, Blast these 5 sequences!!!!!
+# Finally, Blast these 5 sequences!!!!! (keeping the top 3 matches for each)
 blastn \
    -query ${OUT}.top5.fa \
    -db nt \
    -remote \
-   -num_alignments 10 \
+   -num_alignments 3 \
    -outfmt 7 \
    -out ${OUT}.blastout.tsv
 
