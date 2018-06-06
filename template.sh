@@ -18,7 +18,8 @@
 
 # Here is how you would run this script:
 # ./template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa out.sam
-
+# or
+# sh template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa out.sam
 
 # Assign a "name" to reference each of your input files
 FREADS=$1
