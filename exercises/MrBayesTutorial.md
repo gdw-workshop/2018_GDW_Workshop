@@ -133,7 +133,7 @@ MrBayes > help mcmcp
 
 # change some parameters for today’s analysis
 
-MrBayes > mcmcp ngen=20000 samplefreq=200 diagnfreq=500 burninfrac=0.20
+MrBayes > mcmcp ngen=20000 samplefreq=200 diagnfreq=500 burninfrac=0.20 stopval=0.01
 ```
 
 Here, we have changed the number of steps in the MCMC chain to 20,000, will be sampling every 200 steps in the chain, and will be comparing the similarity/difference of the tree samples between the two runs every 500 steps in the chain.  We also set the burn-in period equal to 20% of the total samples collected.  
