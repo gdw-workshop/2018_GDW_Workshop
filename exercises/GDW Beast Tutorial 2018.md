@@ -82,7 +82,7 @@ Now click *Defined by a prefix and its order*
 
 Under *Order* select *last*
 
-Under *Prefix* select the *period* 
+Under *Prefix* select the *period* (.)
 
 Select *Parse as a number*
 
@@ -90,7 +90,7 @@ Leave the rest of the settings at default (unchecked) and hit *OK*
 
 The *Date* column of the *Tips* tab should now be populated with dates ranging from the 80s to the 2010s.  Ignore the precision column for now. 
 
-## Q: What is the height column and why does that matter for analyses in BEAST?
+### Q: What is the height column and why does that matter for analyses in BEAST?
 
 Click on the *Traits* tab (even though we aren’t using it today:)).  
 
@@ -98,7 +98,9 @@ This is where you would define traits that you want to model over the tree.
 You could use location, date, phenotype, etc.  
 But this is beyond the scope of today’s introduction so let’s move on to the *Sites* tab.
 
-###Ok.  This is where we start to get into the good stuff.### 
+
+### Ok.  This is where we start to get into the good stuff.
+
 
 Here’s where you should ideally know enough about your sequences and the genes/organisms they came from that you can inform the model you’re using to analyze them.  
 But since we are analyzing my data and not yours…you’ll just have to take my word for it that the following parameters are good ones for these data.  
