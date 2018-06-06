@@ -77,7 +77,7 @@ Time | Activity
 **10:50-11:55** | Phylogenomic Trees: Models, Algorithms, Accuracy, Robustness, Measures of Support and Interpretation, Jill Pecon Slattery
 **11:55-12:15** | Bayesian Methods Overview with [MCRobot](https://phylogeny.uconn.edu/mcmc-robot/#), Bob Fitak
 **12:15-13:15** | Lunch Provided Onsite
-**13:15-15:15** | Phylogenomic Reconstruction Lab: jModeltest PAUP, MEGA, ML ME MP, Jill Pecon Slattery & Justin Lee
+**13:15-15:15** | Phylogenomic Reconstruction Lab: jModeltest [PAUP exercise](./exercises/PAUP_Exercise.zip), MEGA, ML ME MP, Jill Pecon Slattery & Justin Lee
 **15:15-15:25** | Coffee Break
 **15:25-15:50** | Phylogenomic Reconstruction Lab: [MrBayes](./exercises/MrBayesTutorial.md), Justin Lee
 **15:50-17:00** | Field Trip to CSU Veterinary Hospital
