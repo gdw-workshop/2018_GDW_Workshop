@@ -96,7 +96,9 @@ Leave the rest of the settings at default (unchecked) and hit *OK*
 
 The *Date* column of the *Tips* tab should now be populated with dates ranging from the 80s to the 2010s.  Ignore the precision column for now. 
 
+
 ### Q: What is the height column and why does that matter for analyses in BEAST?
+
 
 Click on the *Traits* tab (even though we aren’t using it today:)).  
 
@@ -131,11 +133,15 @@ Under *Clock type* chose: *Uncorrelated relaxed clock*
 
 The default *Relaxed Distribution* is Lognormal.  Leave this as is.
 
+
 ### Q: What is the difference between a strict clock and relaxed clock?
 ### Q: What is an *uncorrelated* relaxed clock?
 ### Q: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
 
-Next up: Trees tab!
+
+
+Next up: *Trees* tab!
+
 
 For today we will keep it simple and use a *Constant Size Coalescent* Tree Prior but this is one area that BEAST has grown in recent versions.  
 I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions.  
