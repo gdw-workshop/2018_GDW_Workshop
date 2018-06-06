@@ -21,6 +21,12 @@
 # or
 # sh template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa out.sam
 
+# If you get a "permission denied" error, then first run:
+# chmod 770 template.sh
+# The above command changes the permissions to allow the command line to
+# recognize the file template.sh as a program.
+
+
 # Assign a "name" to reference each of your input files
 FREADS=$1
 RREADS=$2
@@ -55,7 +61,7 @@ echo "The trimmed, paired output files are: \
    ${RREADS}.trimmed.fq \
    And the trimmed, unpaired files are: \
    ${FREADS}.trimmed_unpaired.fastq \
-   ${RREADS}.trimmed_unpaired.fastq \"
+   ${RREADS}.trimmed_unpaired.fastq"
 
 
 # Print progress message:
