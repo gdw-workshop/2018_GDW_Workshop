@@ -121,7 +121,7 @@ Time | Activity
 **13:15-14:45** | PAML Computer Lab (host and/or pathogen), Jill Pecon Slattery and Justin Lee
 **14:45-15:15** | BEAST and Associated Software Overview, Justin Lee
 **15:15-15:35** | Coffee Break
-**15:35-17:00** | BEAST Lab (Host and/or Pathogen), Justin Lee
+**15:35-17:00** | [BEAST Lab](./exercises/GDW_BEAST_Tutorial.md) (Host and/or Pathogen), Justin Lee
 **18:00-?** | Party Downtown Fort Collins    
 
 ### Saturday June 9, 2018: Putting it all together: your workflow presentations
