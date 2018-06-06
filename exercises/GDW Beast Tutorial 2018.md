@@ -2,13 +2,16 @@ Genomics of Disease in Wildlife BEAST Tutorial
 ==============================================
 
 
-## First.  Use this link to find the files associated with this exercise:
+## First.  Use this link to find the files associated with this exercise
+
 
 https://drive.google.com/open?id=0B8EJy8MFHGLnOW1LX1NsM05uNEk
 
 Download all of the files in this folder and place them in a convenient directory of your choosing.
 
+
 ##  Second.  Some helpful resources.  Some of these are more essential than helpful!
+
 
 Keep the manual in hand and refer to it often when using BEAST!  It comes with the main BEAST package when you download it but you can also download it here: 
 
@@ -36,6 +39,7 @@ Finally, there is a book from the creators of BEAST that provides background on 
 
 ## Generating trees in BEAST is a multi-step process
 
+
 Today we are going to (re)use an alignment of feline immunodeficiency virus isolates to build a dated tree in BEAST and along the way learn all of the additional programs that are necessary when using BEAST.
 
 As a quick reminder from my overview earlier...
@@ -60,7 +64,9 @@ FigTree is used to visualize the final tree and can be used to label nodes, bran
 
 Go to the BEAST folder in the GDW-Apps on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
 
+
 ## Open BEAUTi
+
 
 File > Import Data and navigate to the directory where you put the files from Google Drive.
 	Select *PLVAB_aln.nex*
@@ -125,9 +131,9 @@ Under *Clock type* chose: *Uncorrelated relaxed clock*
 
 The default *Relaxed Distribution* is Lognormal.  Leave this as is.
 
-## Q: What is the difference between a strict clock and relaxed clock?
-## Q: What is an *uncorrelated* relaxed clock?
-## Q: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
+### Q: What is the difference between a strict clock and relaxed clock?
+### Q: What is an *uncorrelated* relaxed clock?
+### Q: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
 
 Next up: Trees tab!
 
@@ -171,7 +177,9 @@ A pop up window will appear...click ok.  This is your chance to change any addit
 
 Wahoo!  Step one done!
 
+
 ## Open BEAST (also located in GDW-Apps)
+
 
 Load your newly created *file.xml*.  
 
@@ -187,6 +195,7 @@ While that is running…
 
 
 ## Open Tracer
+
 
 File > Import Trace File 
 
@@ -231,7 +240,9 @@ You can also select two parameters (by holding command) and then click on *Joint
 
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
+
 ## Open TreeAnnotator
+
 
 Go down toward the bottom and choose your input file which is one of the files output from BEAST ending in *.trees*.
 	
@@ -261,7 +272,9 @@ Pretty cool right?
 
 Now let’s open the MCC tree and check it out.  This is the moment we’ve been working towards.  Exciting I know.
 
+
 ## Open FigTree (within a separate folder in GDW_Apps)
+
 
 Use File > Open 
 	Select your output.tre file that you made in TreeAnnotator
