@@ -13,9 +13,7 @@ Download all of the files in this folder and place them in a convenient director
 ##  Second.  Some helpful resources.  Some of these are more essential than helpful!
 
 
-Keep the manual in hand and refer to it often when using BEAST!  It comes with the main BEAST package when you download it but you can also download it here: 
-
-http://www.molecularevolution.org/molevolfiles/BEAST/BEAST14_MANUAL-7-6-07
+Keep the manual in hand and refer to it often when using BEAST!  It comes with the main BEAST package when you download the software and I also put a copy of it in the above google drive folder.
 
 
 There is a great BEAST user forum, which should be your first place to go when you run into a roadblock.  Chances are others have had the same issue so the answer may already be there but if not, you can post your question and someone will probably answer you soon.
@@ -52,7 +50,7 @@ Tracer is a program used to evaluate .log files that are produced during a BEAST
 
 TreeAnnotator will find the *best* tree from the thousands of trees sampled during the BEAST MCMC run and summarizes posterior parameter estimates on the tree.
 
-FigTree is used to visualize the final tree and can be used to label nodes, branches, etc. for publication.
+FigTree (remember this?) is used to visualize the final tree and can be used to label nodes, branches, etc. for publication.
 
 
 
@@ -67,8 +65,10 @@ Go to the BEAST folder in the GDW-Apps on your desktop.  All of the following pr
 
 ## Open BEAUTi
 
+Once in BEAUTi...
 
-File > Import Data and navigate to the directory where you put the files from Google Drive.
+File > Import Data 
+Now navigate to the directory where you put the files from Google Drive.
 	Select *PLVAB_aln.nex*
 
 You should see a summary of the file that you loaded under the *Partitions* tab.  Don’t worry about the details now.  If you don’t get an error message you’re doing well.
@@ -96,8 +96,9 @@ Leave the rest of the settings at default (unchecked) and hit *OK*
 
 The *Date* column of the *Tips* tab should now be populated with dates ranging from the 80s to the 2010s.  Ignore the precision column for now. 
 
+### Q1a: What did we just do?  Take a minute to think about it before moving on.
 
-### Q: What is the height column and why does that matter for analyses in BEAST?
+### Q1b: What is the height column and why does that matter for analyses in BEAST?
 
 
 Click on the *Traits* tab (even though we aren’t using it today:)).  
@@ -293,4 +294,9 @@ You can also use the *Node Labels* to view the posterior support for each branch
 
 Play around with the different options and see what you can learn about the samples and model estimates.
 
-Congratulations!  That’s your first run through BEAST.  If you’ve made it this far you deserve a pat on the back and a beer. 
+Congratulations!  That’s your first run through BEAST.  If you’ve made it this far you deserve a pat on the back and a beer.
+
+
+## Here are some brief answers to the questions you contemplated along the way...
+
+A1: BEAST produced time-trees when *Use Tip Dates* is selected.  A sample date (known or estimated) will incorporated into the evolutionary analysis at the same time the tree and other parameters are being evaluated by the MCMC chain.  Think back to Jeff Foster's talk and how he mentioned several times they were using the accumulation of mutations over time to estimate evolutionary relationships and mutation rates between samples at different scales.  This is exactly what he was talking about.  The theory behind why this works is based on Kingman's Coalescent...the details of which are beyond the scope of this exercise but [here's] (http://www.sfu.ca/biology/courses/bisc869/869_lectures/MHP_Coalescent.pdf) an easy to understand introduction to the concept if you're interested.
