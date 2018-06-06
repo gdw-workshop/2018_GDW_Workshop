@@ -200,7 +200,7 @@ Easy compared to BEAUTi right?
 While that is running…
 
 
-## Open Tracer
+## Open Tracer (in GDW-Apps)
 
 
 File > Import Trace File 
