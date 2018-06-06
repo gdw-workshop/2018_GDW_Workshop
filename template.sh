@@ -14,12 +14,12 @@
 # This script will require four inputs: the
 # forward and reverse fastq files of raw sequencing
 # reads, the reference genome in FASTA format, and
-# the name of the final SAM file
+# the base name of the output files
 
 # Here is how you would run this script:
-# ./template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa out.sam
+# ./template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa output1
 # or
-# sh template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa out.sam
+# sh template.sh Forward_Reads.fastq Reverse_Reads.fastq reference.fa output1
 
 # If you get a "permission denied" error, then first run:
 # chmod 770 template.sh
@@ -73,6 +73,7 @@ bowtie2-build $REF ${REF}.index
 
 
 # Print another message:
+echo "Finished building the index..."
 echo "Mapping only the trimmed reads ${FREADS}.trimmed.fq \
 and ${RREADS}.trimmed.fq to reference genome $REF ..."
 
@@ -80,12 +81,69 @@ and ${RREADS}.trimmed.fq to reference genome $REF ..."
 # Perform mapping using Bowtie2
 bowtie2 \
    -x ${REF}.index \
+   --local \
    -q \
    -1 ${FREADS}.trimmed.fq \
    -2 ${RREADS}.trimmed.fq \
    --no-unal \
    --threads 4 \
-   -S $OUT
+   -S ${OUT}.sam \
+   --un-conc ${OUT}.unmapped.fastq
+
+
+# Print progress message
+echo "Finished mapping.  The output sam file \
+was written to ${OUT}.sam and the unmapped reads \
+are in ${OUT}.unmapped.fasta"
+
+
+# Begin Assembly of unmapped reads using Spades
+echo "Beginning de novo assembly of unmapped reads..."
+
+
+# Run Spades
+spades.py \
+   -o ${OUT}_Spades_Assembly \
+   --pe1-1 ${OUT}.unmapped.1.fastq \
+   --pe1-2 ${OUT}.unmapped.2.fastq \
+   -m 12 \
+   -t 4
+
+
+# Print progress message
+echo "Finished Spades assembly..."
+
+
+# Print message
+echo "Beginning blast search of top 5 contigs..."
+
+
+# Select the first 5 contigs from the assembly
+# This is a scary command, but I will explain after:
+/Users/instructor/Desktop/GDW_Apps/seqtk/seqtk seq \
+   -l0 \
+   ${OUT}_Spades_Assembly/contigs.fasta | \
+   head -10 > ${OUT}.top5.fa
+
+
+# MINDBLOWING!!!!!
+# First, this command used seqtk to change the format
+# of the contigs.fasta file to a fasta format with
+# each sequence occupying two lines.  Next, the 'head'
+# command selects the top 10 lines, or 5 sequences.
+# Remember the pipe????
+
+
+# Finally, Blast these 5 sequences!!!!!
+blastn \
+   -query ${OUT}.top5.fa \
+   -db nt \
+   -remote \
+   -num_alignments 10 \
+   -outfmt 7 \
+   -out ${OUT}.blastout.tsv
+
 
 # Print final message
-echo "Analysis complete.  Your final results are written to $OUT"
+echo "Blast has finished, results are in ${OUT}.blastout.tsv..."
+echo "Analysis complete."
