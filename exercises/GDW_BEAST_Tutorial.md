@@ -58,7 +58,7 @@ FigTree (remember this?) is used to visualize the final tree and can be used to 
 
 # Ok.  Lets get Started!
 
-Go to the BEAST folder in the GDW-Apps on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
+Go to the BEAST folder in the GDW-Apps directory on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
 
 
 ## Open BEAUTi
@@ -73,7 +73,11 @@ You should see a summary of the file that you loaded under the *Partitions* tab.
 
 If you want to get complicated later on and analyze multiple data sets (i.e. different loci) or simultaneously analyze non-genetic traits you would import those additional data sets here before moving on.
 
-The *Taxa* tab is primarily used when you want to separate samples *a priori* by taxa to determine the time to most recent common ancestor (TMRCA) of a pre-defined group of samples.  We won’t use this today...but feel free to explore later:)
+The *Taxa* tab is primarily used when you want to separate samples *a priori* by taxa to determine the time to most recent common ancestor (TMRCA) of a pre-defined group of samples.  
+
+For example, remember that this dataset contains sequences from two subtypes of puma lentivirus?  If our primary question was: When did PLVA and PLVB diverge (or in coalescent language...what is the TMRCA of PLVA and PLVB?)?  Then we would define two Taxon Sets here...one containing all PLVA and the other containing all PLVB isolates.  
+
+We won’t use this today...but feel free to explore later:)
 
 Select the *Tips* tab
 
