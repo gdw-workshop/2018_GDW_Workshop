@@ -106,7 +106,7 @@ The *Date* column of the *Tips* tab should now be populated with dates ranging f
 Click on the *Traits* tab (even though we aren’t using it today:)).  
 
 This is where you would define traits that you want to model over the tree.  
-You could use location, date, phenotype, etc.  
+You could use location, phenotype, host association, serotype, vector species, etc.  
 But this is beyond the scope of today’s introduction so let’s move on to the *Sites* tab.
 
 
