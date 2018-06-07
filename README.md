@@ -109,13 +109,14 @@ Time | Activity
 Time | Activity
 --- | ---
 **07:00–08:00** | Breakfast, Rams Horn Dining Center
-**08:15-08:25** | Step 5: Functional Signals of Host-Pathogen Interactions from Population & Comparative Genomics 
-**08:35-09:30** | [Intra- and inter-host variants](./lectures/Stenglein_intrahost_variants.pdf), Mark Stenglein
+**08:15-08:20** | Step 5: Functional Signals of Host-Pathogen Interactions from Population & Comparative Genomics 
+**08:20-08:50** | Thought Exercise and Best Practices Session #2
+**08:50-09:30** | [Intra- and inter-host variants](./lectures/Stenglein_intrahost_variants.pdf), Mark Stenglein
 **09:30-10:00** | CSU Flash Talk, Greg Ebel
 **10:00-10:20** | Coffee Break and Meet Invited Speaker
 **10:20-10:40** | Molecular Clocks, Gene Trees, Species Trees, Bayesian (host & pathogen), Jill Pecon Slattery
-**10:40-11:15** | Variants, Selection, Adaptation, Fitness, Disease (host & pathogen), Jill Pecon Slattery
-**11:15-11:45** | Thought Exercise and Best Practices Session #2, Jill, Bob, Chris, Mark will be on hand to help as participants work on their scenario
+**10:40-11:15** | [Variant calling exercise](./exercises/variant_exercise.md), Mark Stenglein 
+**11:15-11:45** | Thought Exercise and Best Practices Session #2.5
 **11:45-12:15** | Computer Lab: Host gene alignment, phylogeny, variant identification, Jill Pecon Slattery
 **12:15-13:15** | Lunch Provided Onsite
 **13:15-14:45** | PAML Computer Lab (host and/or pathogen), Jill Pecon Slattery and Justin Lee
