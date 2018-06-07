@@ -56,8 +56,6 @@ FigTree (remember this?) is used to visualize the final tree and can be used to 
 
 
 
-
-
 # Ok.  Lets get Started!
 
 Go to the BEAST folder in the GDW-Apps on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
@@ -98,7 +96,7 @@ The *Date* column of the *Tips* tab should now be populated with dates ranging f
 
 ### Q1a: What did we just do?  Take a minute to think about it before moving on.
 
-### Q1b: What is the height column and why does that matter for analyses in BEAST?
+### Q1b: What is the height column and why does that matter for analyses/output in BEAST?
 
 
 Click on the *Traits* tab (even though we aren’t using it today:)).  
@@ -120,7 +118,7 @@ Use estimated base frequencies
 
 Use a gamma distribution to estimate site heterogeneity (Q: WTF is this referring to?)
 
-Keep the number of Gamma Categories low unless you have reason to do otherwise…select 4.
+Keep the number of Gamma Categories low unless you have reason to do otherwise...select 4.
 
 Partition codons into two groups *(1+2),3*
 
@@ -135,9 +133,9 @@ Under *Clock type* chose: *Uncorrelated relaxed clock*
 The default *Relaxed Distribution* is Lognormal.  Leave this as is.
 
 
-### Q: What is the difference between a strict clock and relaxed clock?
-### Q: What is an *uncorrelated* relaxed clock?
-### Q: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
+### Q2a: What is the difference between a strict clock and relaxed clock?
+### Q2b: What is an *uncorrelated* relaxed clock?
+### Q2c: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
 
 
 
@@ -145,17 +143,15 @@ Next up: *Trees* tab!
 
 
 For today we will keep it simple and use a *Constant Size Coalescent* Tree Prior but this is one area that BEAST has grown in recent versions.  
-I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions.  
-For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  
-Most of these options have papers that describe them so as your BEAST skills become more advanced you can explore these.
+
+I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions.  For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  Most of these options have papers that describe them so as your BEAST skills become more advanced you can explore these.
 
 Leave the default of *Random Starting Tree* and move on to the *States* tab.
 
 If you want to do ancestral reconstruction you can specify some options here.  But we don’t.  
 So let’s move on to the *Priors* tab.
 
-This is another place it is important (although not necessarily critical) that you have some knowledge of the sequences/taxa that you are analyzing.  
-Each of the lines on this page are present because of the parameter choices we have made thus far.  
+This is another place it is important (although not necessarily critical) that you have some knowledge of the sequences/taxa that you are analyzing.  Each of the lines on this page are present because of the parameter choices we have made thus far.  
 If you select different model parameters next time you use BEAUTi...you will have different priors when you open this tab. 
 
 For today we will leave them all at default except the following:
@@ -302,3 +298,9 @@ Congratulations!  That’s your first run through BEAST.  If you’ve made it th
 A1a: BEAST produced time-trees when *Use Tip Dates* is selected.  A sample date (known or estimated) will incorporated into the evolutionary analysis at the same time the tree and other parameters are being evaluated by the MCMC chain.  Think back to Jeff Foster's talk and how he mentioned several times they were using the accumulation of mutations over time to estimate evolutionary relationships and mutation rates between samples at different scales.  This is exactly what he was talking about.  The theory behind why this works is based on Kingman's Coalescent...the details of which are beyond the scope of this exercise but [here's](http://www.sfu.ca/biology/courses/bisc869/869_lectures/MHP_Coalescent.pdf) an easy to understand introduction to the concept if you're interested.
 
 A1b: In most other types of trees, x-coordinate (branch length) of a sample is based on its genetic distance from the root.  In contrast, the x-axis of time-trees is basically a timeline starting on the left with current time (or the date of the most recent sample), and working backwards in time toward the root of the tree (the theoretical common ancestor to all of the sampled taxa).  Therefore, the *height* you see in the Tips tab is the difference in time units of each sample from the most recent sample.  Still confused?  I don't blame you.  Difficult to explain and difficult to understand.  Here's an example: if I'm analyzing a set of sequences collected between 2000 and 2018, the hight of my samples from 2018 will be zero and the hight of the samples from 2000 will be 18.  This will hopefully make more sense when we view the final tree later on.
+
+A2a: A strict clock assumes all lineages on a tree (branches, taxa, etc) evolve at the same rate.  A relaxed molecular clock allows different lineages to have different rates. 
+
+A2b: An uncorrelated relaxed clock means that even closely related lineages are allowed to have different rates because the rates between related branches/lineages/taxa are not correlated to one another.
+
+A2c: This one is more of food for thought.  If you spend some time with the BEAST book and user forums described at the beginning of this tutorial you will start to gain an understanding of how this part all fits together :)
