@@ -245,7 +245,7 @@ The *Trace* is especially useful to view in order to know if you have achieved g
 
 You can also select two parameters (by holding command) and then click on *Joint Marginal* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values.  Do the same for CP1+2 and CP3 mu values.
 
-## Q4: Were we correct to estimate these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
+## Q3: Were we correct to estimate these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
 
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
@@ -310,3 +310,5 @@ A2a: A strict clock assumes all lineages on a tree (branches, taxa, etc) evolve 
 A2b: An uncorrelated relaxed clock means that even closely related lineages are allowed to have different rates because the rates between related branches/lineages/taxa are not correlated to one another.
 
 A2c: This one is more of food for thought.  If you spend some time with the BEAST book and user forums described at the beginning of this tutorial you will start to gain an understanding of how this part all fits together :)
+
+A3:
