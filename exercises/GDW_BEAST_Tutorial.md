@@ -158,6 +158,8 @@ So let’s move on to the *Priors* tab.
 This is another place it is important (although not necessarily critical) that you have some knowledge of the sequences/taxa that you are analyzing.  Each of the lines on this page are present because of the parameter choices we have made thus far.  
 If you select different model parameters next time you use BEAUTi...you will have different priors when you open this tab. 
 
+## Please take a minute to read the description of each prior and seee if you can figure out how they relate to the model choices we've made in the *Sites*, *Clocks*, and *Trees* tabs. 
+
 For today we will leave them all at default except the following:
 	
 *allMus*: Change this to lognormal with an initial value = 1 and log(stdev) = 1
@@ -173,24 +175,25 @@ Set the length of the chain to *1,000,000* and log the parameter estimates every
 
 These numbers are inadequate but it will let you get output files fast (and I have an output file from longer chains we can look at :)). 
 
-[As a rule of thumb you want to end up with ~10,000 logged parameters/trees at the end of a BEAST run. This means that if you run the chain for 10^8 steps you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start. There are reasons we will get into later why you’d want to log more frequently too.]
+[As a rule of thumb you want to end up with ~10,000 logged parameters/trees at the end of a BEAST run. This means that if you run the chain for 10^8 steps you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start.]
 
-You can change the output file stem name if you want or leave it as is. If you start to do multiple combinations of BEAUTi parameters and BEAST runs from the same alignment file it is nice to label the output differently.  
-I use numbers, then letters, then obscenities in that order as I go through the process many times until it comes out right! 
+You can change the output file stem name if you want or leave it as is. If you start to do multiple combinations of BEAUTi parameters and BEAST runs from the same alignment file it is nice to label the output differently.  I use numbers, then letters, then obscenities in that order as I go through the process many times until it comes out right! 
 
 Ok.  Click *Generate BEAST File* and save it where you want.
 
-A pop up window will appear...click ok.  This is your chance to change any additional parameters from default but today we will leave them alone.
+A pop up window will appear.  This is your chance to change any additional parameters from default but today we will leave them alone.
+
+Click Continue.
 
 Wahoo!  Step one done!
 
 
-## Open BEAST (also located in GDW-Apps/BEAST/)
+## Open BEAST (also located in GDW-Apps/BEAST)
 
 
-Load your newly created *file.xml*.  
+Load your newly created *file.xml* (PLVAB_aln.xml unless you changed it).
 
-Unclick the *Use Beagle* option and leave the rest of it at default.  
+See the check box that says *Use Beagle library if available*?  Well, Beagle is an add-on software that can enable BEAST to run faster...much faster depending on the configuration of the computer/server you're using to run BEAST.  Tyler Eike (our rockstar IT guy) got Beagle up and running on these laptops so feel free to run BEAST with and without BEAGLE tody so you can see the difference. 
 
 Select *Run* and you are off to the races.  
 
@@ -201,27 +204,24 @@ Easy compared to BEAUTi right?
 While that is running…
 
 
-## Open Tracer (in GDW-Apps/Tracer/)
+## Open Tracer (in GDW-Apps/Tracer)
 
 
 File > Import Trace File 
 
 Select your *file_stem.log* file that is in progress from your current BEAST run (yes you can view it before the BEAST run is complete).   
 
-You should also open *PLVAB_aln_GDW.log* which is a BEAST output file from the same alignment we used earlier but with a few extra parameter estimates.  
-It will work well to let you see what a log file will look like after the end of a sufficiently long MCMC chain.
+You should also open *PLVAB_aln_GDW1.log* which is a BEAST output file from the same alignment we used earlier but with a few extra parameter estimates and a chain that was run 100x as long.  It will work well to let you see what a log file will look like after the end of a sufficiently long MCMC chain.
 
 You can also drag and drop files into the *Trace Files* area and open multiple trace files simultaneously to compare runs.
 
-Look at the mean posterior estimate of each parameter value within the ‘Traces’ pane on the bottom left…do they make sense?  
+Look at the mean posterior estimate of each parameter value within the ‘Traces’ pane on the left...do they make sense?  
 
-Ok.  
+Ok. Probably none of this will make sense (because this is likely your first time doing this and you don’t know much about the dataset used) but this is where you will evaluate parameter estimates to make sure they make sense when you analyze your own data!  This is also the first set of results you've generated that can be informative for your study and can end up in your Nature publication.
 
-Probably none of this will make sense because you don’t know much about the dataset used but this is where you will evaluate parameter estimates to make sure they make sense when you analyze your own data!  
+This is also a good time to go back to the prior distributions and values we entered into BEAUTi to see how our choices may have influenced the outcome, or which parameter estimates may be wildy different than we thought they would be.
 
-This is a good time to go back to the prior distributions and values we entered into BEAUTi to see how our choices may have influenced the outcome, or which parameter estimates may be wildy different than we thought they would be.
-
-The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  
+The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  Before you do your own BEAST analyses...read up on ESS in one of the sources of knowledge I listed at the start of the tutorial.
 
 If this is less than 100 it will be red to give you a warning that estimates should not be trusted.  
 
@@ -243,7 +243,9 @@ You can visualize the distribution/frequency of values sampled throughout the le
 
 The *Trace* is especially useful to view in order to know if you have achieved good sampling of the posterior…it should look like a ‘spiny caterpillar’ (or at least that’s how it was taught to me).  
 
-You can also select two parameters (by holding command) and then click on *Joint Marginal* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values…were we correct to estimate these codon partitions separately? Do the same for CP1+2 and CP3 mu values.  Thoughts?  What does this say about the flexibility of different codon positions to mutate/evolve over time?
+You can also select two parameters (by holding command) and then click on *Joint Marginal* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values.  Do the same for CP1+2 and CP3 mu values.
+
+## Q4: Were we correct to estimate these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
 
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
@@ -253,7 +255,7 @@ Ok.  Spend as much time as you want with Tracer but when you’re ready let’s 
 
 Go down toward the bottom and choose your input file which is one of the files output from BEAST ending in *.trees*.
 	
-I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW.trees*
+I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW1.trees*
 
 
 Choose your output file name ending with *.tre* and the location you want to save it. 
@@ -284,7 +286,7 @@ Now let’s open the MCC tree and check it out.  This is the moment we’ve been
 
 
 Use File > Open 
-	Select your output.tre file that you made in TreeAnnotator
+	Select your output.tre file that you made in TreeAnnotator (or you can open PLVAB_aln_GDW1.tre)
 
 Now you can use the panel on the left to play with how the tree looks, color branches and nodes, and visualize many of the parameters we estimated during the BEAST run.  
 
