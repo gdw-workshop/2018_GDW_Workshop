@@ -7,7 +7,7 @@ Genomics of Disease in Wildlife BEAST Tutorial
 
 https://drive.google.com/open?id=0B8EJy8MFHGLnOW1LX1NsM05uNEk
 
-Download all of the files in this folder and place them in a convenient directory of your choosing.
+Download all of the files in this folder and place them in a convenient directory of your choosing.  Just as a reminder...the sequences we'll be analyzing today are from two subtypes of a feline retrovirus (pumalentivirus A and B) that infect bobcats (Lru) and mountain lions (Pco).  We've constructed phylogenetic trees in BEAST using these and other sequence data from these viruses to understand host-pathogen relationships, intra-and inter-host transmission dynamics, and how the ecology of the viruses provide insight into the ecology of the hosts they infect.  Today we'll be doing a fairly standard BEAST workflow to estimate the phylogenetic relationships among these viral isolates.
 
 
 ##  Second.  Some helpful resources.  Some of these are more essential than helpful!
