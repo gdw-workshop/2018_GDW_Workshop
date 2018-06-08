@@ -17,7 +17,7 @@ The dataset is described in BioProject [PRJEB14687](https://www.ncbi.nlm.nih.gov
 First, let's setup a directory (folder) in which to work. Lines that start with a # symbol are comment lines and are just for your information. Open the terminal app on your laptop, then type these commands:
 ```
 # Move to home folder
-cd ~
+cd ~/Desktop
 
 # Make a new folder for this exercise
 mkdir DOLPH_VIRUS
@@ -30,7 +30,7 @@ pwd
 echo "$PWD"
 ```
 
-Now, lets get our raw sequencing data!  GenBank's Sequence Read Archive (SRA) is the database where a majority of raw sequencing data for projects is stored.  These data are stored as a series of "Experiments" and "Runs", each with an accession number.  The acession number we want is ERR1938563. Sequencing data are stored in a highly compressed format ending in .sra.  We need to download this data and convert to the conventional FASTQ format.
+Now, lets get our raw sequencing data!  GenBank's Sequence Read Archive (SRA) is the database where a majority of raw sequencing data for projects is stored.  These data are stored as a series of "Experiments" and "Runs", each with an accession number.  The accession number we want is ERR1938563. Sequencing data are stored in a highly compressed format ending in .sra.  We need to download this data and convert to the conventional FASTQ format.
 ```
 # The sratoolkit from NCBI has a program "fastq-dump" that can perform these tasks and more
 fastq-dump \
