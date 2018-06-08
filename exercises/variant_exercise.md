@@ -123,22 +123,3 @@ First, you need to get your reference sequence into Geneious, preferably with an
 
 
 
-### To download all the content from the GitHub site to your thumb drive
-
-To have a copy of all the material to take home with you.
-
-```
-# change directory to your external hard drive
-# TODO: FIX THIS PATH for thumbdrive
-cd /Volumes/GDWDrive/     
-
-# 'clone' the repository (download a copy)
-git clone https://github.com/gdw-workshop/2018_GDW_Workshop.git
-```
-
-This will create a new directory on your thumb drive named 2018_GDW_Workshop with all the course material that's on the github repository.
-
-
-You can also download the entire repository directly from the github site (as a .zip file), and our intent is to leave this site up indefinitely.
-
-
