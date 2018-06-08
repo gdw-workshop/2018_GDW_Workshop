@@ -253,9 +253,10 @@ Ok.  Spend as much time as you want with Tracer but when you’re ready let’s 
 ## Open TreeAnnotator (in GDW-Apps/BEAST)
 
 
+
 Go down toward the bottom and choose your *Input Tree File*, which is one of the files output from BEAST ending in *.trees*.  This file contains information about the trees that BEAST sampled throughout your MCMC run.
 	
-I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW1.trees*
+I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW1.trees* . Be patient when going through these steps.  When I tested this out on the GDW laptops with the large input file it was taking a while to process things.
 
 
 Choose your output file name ending with *.tre* and the location you want to save it. 
