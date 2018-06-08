@@ -297,7 +297,7 @@ You can also use the *Node Labels* to view the posterior support for each branch
 
 Play around with the different options and see what you can learn about the samples and model estimates.
 
-For extra credit you can open another window of FigTree with MrBayes output tree we constructed on Wed and compare the two.  While the major clusters should be very similar between the two trees, you should notice a very major difference between them...hmmm.
+For extra credit you can open another window of FigTree with MrBayes output tree we constructed on Wed and compare the two.  While the branching patterns, nodes, and major clusters should be very similar between the two trees, you should notice a very major difference between them...hmmm.  What on Earth is going on???
 
 Congratulations!  That’s your first run through BEAST.  If you’ve made it this far you deserve a pat on the back and a beer.
 
