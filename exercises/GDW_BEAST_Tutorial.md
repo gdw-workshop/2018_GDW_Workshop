@@ -243,9 +243,9 @@ You can visualize the distribution/frequency of values sampled throughout the le
 
 The *Trace* is especially useful to view in order to know if you have achieved good sampling of the posterior…it should look like a ‘spiny caterpillar’ (or at least that’s how it was taught to me).  
 
-You can also select two parameters (by holding command) and then click on *Joint Marginal* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values.  Do the same for CP1+2 and CP3 mu values.
+You can also select two parameters (by holding command) and then click on *Marginal Prob Distribution* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values (Do you remember what kappa is? If not check back to the priors tab of Beauti or google it!).  Do the same for CP1+2 and CP3 mu values.
 
-## Q3: Were we correct to estimate these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
+## Q3: Were we correct to estimate values for these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
 
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
@@ -253,7 +253,7 @@ Ok.  Spend as much time as you want with Tracer but when you’re ready let’s 
 ## Open TreeAnnotator (in GDW-Apps/BEAST)
 
 
-Go down toward the bottom and choose your input file which is one of the files output from BEAST ending in *.trees*.
+Go down toward the bottom and choose your *Input Tree File*, which is one of the files output from BEAST ending in *.trees*.  This file contains information about the trees that BEAST sampled throughout your MCMC run.
 	
 I have a file you can use here as well since your BEAST run may not be done yet and (it probably isn’t the best example anyway): *PLVAB_aln_GDW1.trees*
 
@@ -261,7 +261,7 @@ I have a file you can use here as well since your BEAST run may not be done yet 
 Choose your output file name ending with *.tre* and the location you want to save it. 
 
 
-Now go back up and enter 10% of the number of MCMC steps in your chain into the *Specify the burnin as the number of states* field.
+Now go back up and enter a value equal to 10% of the total number of MCMC steps in your chain (remember you entered this value in the *MCMC* tab in BEAUTi?) into the *Specify the burnin as the number of states* field.
 	
 i.e. if you are analyzing your BEAST output from a run of 10,000,000 steps then you’d have a burnin of 1,000,000.  For a chain length of 1,000,000 steps (like the inadequate example I had you do) enter 100,000.  
 (Hint: If you forget the number of steps you have in a given chain you can open the log file in Tracer and it will tell you how many steps were in the run.)
@@ -296,6 +296,8 @@ You can also use the *Node Labels* to view the posterior support for each branch
 
 Play around with the different options and see what you can learn about the samples and model estimates.
 
+For extra credit you can open another window of FigTree with MrBayes output tree we constructed on Wed and compare the two.  While the major clusters should be very similar between the two trees, you should notice a very major difference between them...hmmm.
+
 Congratulations!  That’s your first run through BEAST.  If you’ve made it this far you deserve a pat on the back and a beer.
 
 
@@ -311,4 +313,4 @@ A2b: An uncorrelated relaxed clock means that even closely related lineages are 
 
 A2c: This one is more of food for thought.  If you spend some time with the BEAST book and user forums described at the beginning of this tutorial you will start to gain an understanding of how this part all fits together :)
 
-A3:
+A3: When two parameters have posterior support for distinct distributions, this lends strong support that they behave differenty and therefore models that treat them differently are capturing more information about how these viruses evolve than models that treat all codon positions the same.  This is one example of looking at the parameter values of the posterior distribution to gain insight into the evolutionary process of your samples.
