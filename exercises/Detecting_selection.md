@@ -9,7 +9,7 @@ A sliding window means we are going to:
 - Finally, we can summarize our parameters using basic statistics like histograms, means, standard deviations in your favorite stats program (e.g., R, Excel)
 
 A visual example of a sliding window is available below:
-![window plot](./windows.png)
+![window plot](./windows.jpg)
 
 
 Let's begin.
