@@ -199,9 +199,12 @@ Select *Run* and you are off to the races.
 
 Easy compared to BEAUTi right?
 
+
 [If you didn’t make it through BEAUTi or if you run into errors when you run BEAST, you already downloaded a BEAST input file that will work so go to your directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
 
-While that is running…
+Helpful tip...when the beast run completes, some important summary statistics that may be used to modidify subsequent runs are printed to the screen.  You can save the beast output as a .txt file to keep them for later reference.
+
+While BEAST is running…
 
 
 ## Open Tracer (in GDW-Apps/Tracer)
