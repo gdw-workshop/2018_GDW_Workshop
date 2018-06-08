@@ -9,7 +9,7 @@ A sliding window means we are going to:
 - Finally, we can summarize our parameters using basic statistics like histograms, means, standard deviations in your favorite stats program (e.g., R, Excel)
 
 A visual example of a sliding window is available below:
-![window plot](./windows.png)
+![window plot](./windows.jpg)
 
 
 Let's begin.
@@ -17,8 +17,8 @@ Let's begin.
 ## Step 1: Preparing the software
 We are going to use a quick and easy tool, called "gd", written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my fingers are crossed!!!).
 ```
-# Let's move to our home folder
-cd ~
+# Let's move to our Desktop
+cd ~/Desktop
 
 # Make a new folder for this exercise
 mkdir WINDOW_ANALYSIS
@@ -56,8 +56,8 @@ This file is actually a compressed folder.  We have to uncompress and unpack thi
 tar -zxvf gd_0.12.tgz
 ```
 
-There should not be a new folder called "Gd_0.12".  Check with your "ls" command.
-Now, we are going to move into this folder, then "compile" the program.  It is common for various bioinformatics programs to be sent in this form.  "Compiling" just means to assemble the program from various pieces and customize it to your particular computers settings.  It is "usually" super easy.
+There should now be a new folder called "Gd_0.12".  Check with your "ls" command.
+Now, we are going to move into this folder, then "compile" the program.  It is common for various bioinformatics programs to be sent in this form.  "Compiling" just means to assemble the program from various pieces and customize it to your particular computers settings.  It is *usually* super easy.
 Here we go...
 ```
 # Move into the Gd program folder
@@ -74,7 +74,7 @@ cd ..
 ```
 
 # Step 2:
-We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 21 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
+We need a FASTA alignment file to use to calculate the various statistics.  Download the file [Spne.fasta.gz](./Spne.fasta.gz) from the github page in the folder 'exercises'.  This file contains an alignment of 21 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
 You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder).
 ```
 # Move the file to our current folder
@@ -103,7 +103,7 @@ Feel free to open the output file to view its contents using your favorite metho
 - column 1: the midpoint of the window
 - column 2: pi
 
-Your final project, worth 100 points and 100% of your final grade, is to plot the results and find regions that may be under positive selection.  Use your favorite spreadsheet program, like R or Excel.  Plot the window's midpoint (X axis) and pi (Y axis).  I recommend calculating summary statistics, like the mean and standard deviation, to determine if there are any extreme outliers.  When plotting, think about whether or not a log axis may be useful...
+Your final project, worth 100 points and 100% of your final grade, is to plot the results and find regions that may be under positive selection.  Use your favorite spreadsheet program, like R or Excel.  Plot the window's midpoint (X axis) and pi (Y axis).  I recommend calculating summary statistics, like the mean and standard deviation, to determine if there are any extreme outliers.  When plotting, think about whether or not a log axis may be useful...  You can also try varying the window sizes to see the change in resolution of your parameter.
 If you want to use R, here are the commands (THESE WILL NOT WORK IN UNIX, ONLY IN R)
 ```
 # Load the file as two columns
