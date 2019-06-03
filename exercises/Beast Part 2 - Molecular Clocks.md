@@ -1,10 +1,12 @@
 
-
 LAB BEAST part 2 – Confirming whether a molecular clock can be reliably estimated
 =================================================================================
+
 The shapes of phylogenetic trees reflect biological processes occurring on wide-ranging timescales, from as little as few weeks in rapidly evolving microbes to millions of years for macroevolutionary processes such as speciation. Regardless of the scale, being able to calibrate trees (i.e. to put a time-scale on them) and to date key events is an important part of understanding the dynamical processes that gave rise to the phylogenetic patterns we observe. Central to this idea of tree calibration and dating is the concept of a *molecular clock*: the stochastic but regular accumulation of nucleotide substitutions through time. Where these substitutions are accumulating fast enough to be picked up within sampling intervals, such populations are referred to as measurably evolving (Drummond et al. 2003) and molecular clocks can be directly estimated from genetic sequence data. 
 
-Many disease-causing organisms, especially RNA viruses but also bacteria and some DNA viruses, have been shown to be measurably evolving (Biek et al, 2015). However, how do you know that this holds true for a given pathogen genomic data set? ####Before we are attempting to estimate a molecular clock from our data using BEAST, we should confirm that the data contain sufficient signal to do so. #### The BEAST output in TRACER does not generally give us reliable indication in that respect: the program will always attempt to fit a molecular clock if we asked it to do so and will produce an estimate whether or not there is a genuine signal of measurable evolution in the data. 
+Many disease-causing organisms, especially RNA viruses but also bacteria and some DNA viruses, have been shown to be measurably evolving (Biek et al, 2015). However, how do you know that this holds true for a given pathogen genomic data set? 
+####Before we are attempting to estimate a molecular clock from our data using BEAST, we should confirm that the data contain sufficient signal to do so.
+The BEAST output in TRACER does not generally give us reliable indication in that respect: the program will always attempt to fit a molecular clock if we asked it to do so and will produce an estimate whether or not there is a genuine signal of measurable evolution in the data. 
 
 
 Testing for a molecular clock signal using TempEst
