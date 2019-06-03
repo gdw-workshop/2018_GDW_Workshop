@@ -52,10 +52,11 @@ The methods outlined here are generally applicable to any pathogen genomic data 
 **References**
 
 Biek, R., Pybus, O. G., Lloyd-Smith, J. O., & Didelot, X. (2015). Measurably evolving pathogens in the genomic era. Trends in Ecology & Evolution, 30(6), 306–313. http://doi.org/10.1016/j.tree.2015.03.009
+
 Drummond, A. J., Pybus, O. G., & Rambaut, A., Forsberg, R and A G Rodrigo (2003). Measurably evolving populations. Trends in Ecology & Evolution Vol.18 No.9, 481-488. http://doi.org/10.1016/S0169-5347(03)00216-7
+
 Drummond, A. J., Ho, S. Y. W., Phillips, M. J., & Rambaut, A. (2006). Relaxed phylogenetics and dating with confidence. PLoS Biology, 4(5), 699–710. http://doi.org/10.1371/journal.pbio.0040088
 
 Rambaut, Lam, de Carvalho & Pybus (2016). Exploring the temporal structure of heterochronous sequences using TempEst. Virus Evolution 2: vew007. http://dx.doi.org/10.1093/ve/vew007
 
 Rieux, Adrien, and Camilo E. Khatchikian. (2017). "TipDatingBeast: An R package to assist the implementation of phylogenetic tip‐dating tests using BEAST." Molecular Ecology Resources 17, no. 4: 608-613. http://doi.org/10.1111/1755-0998.12603
-
