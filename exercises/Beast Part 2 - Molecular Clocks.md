@@ -39,7 +39,7 @@ You are provided with the results from five such replicates with randomised date
 
 The methods outlined here are generally applicable to any pathogen genomic data set (or subgenomic data). While most RNA viruses can be expected to be measurable evolving, especially if full genomes can be used, this is not always the case. Processes such as recombination for example can impact the relationship between sampling time and root-to-tip divergence in spurious ways. For double-stranded DNA viruses, Firth et al () demonstrated that only some of the available genomic data sets exhibited measurable evolution. 
 
-**Some general rules and recommendations:
+**Some general rules and recommendations:**
 
 •	You should always assess the data for clock-like behaviour in TempEst before setting up a BEAST analysis. Even if the majority of the data exhibit the expected positive correlation, visual inspection is a good way to identify outliers. Such outliers might be attributable to errors in the data (such as a wrong date) or other processes (e.g. recombination). These outliers should be dealt with, either by correcting the data (where it is possible) or by removing them (if this can be justified). 
 
@@ -49,7 +49,7 @@ The methods outlined here are generally applicable to any pathogen genomic data 
 
 
 
-**References
+**References**
 
 Biek, R., Pybus, O. G., Lloyd-Smith, J. O., & Didelot, X. (2015). Measurably evolving pathogens in the genomic era. Trends in Ecology & Evolution, 30(6), 306–313. http://doi.org/10.1016/j.tree.2015.03.009
 Drummond, A. J., Pybus, O. G., & Rambaut, A., Forsberg, R and A G Rodrigo (2003). Measurably evolving populations. Trends in Ecology & Evolution Vol.18 No.9, 481-488. http://doi.org/10.1016/S0169-5347(03)00216-7
