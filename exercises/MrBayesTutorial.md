@@ -79,7 +79,7 @@ Default model settings:
    Parsmodel    No/Yes                                No                         
    ------------------------------------------------------------------    
 ```
-For today’s tutorial we will modify a few parameters of the likelihood and nucleotide parameters (using *lset*) and some of the parameters that set how the sampling should be performed during the MCMC run (using *mcmcp*).  All parameters are modified using the same pattern that is described below.
+For today’s tutorial we will modify a few of the likelihood and nucleotide parameters (using *lset*) and some of the parameters that set how the sampling should be performed during the MCMC run (using *mcmcp*).  All parameters are modified using the same pattern that is described below.
 
 ```
 MrBayes > lset nucmodel=codon nst=6 rates=invgamma
@@ -88,7 +88,7 @@ MrBayes > lset nucmodel=codon nst=6 rates=invgamma
 ### Q1: What parameters did we just modify, what did we change them to, and why would we choose these values?
 
 ```
-# Now you check to see that your current list of parameters priors match what you entered:
+# Now you check to see that your current list of parameter priors match what you entered:
 
 MrBayes > help lset
 
@@ -120,7 +120,7 @@ Now let’s look at the MCMC paramaeters…
 MrBayes > help mcmcp
 ```
 
-I’d like to make mention of a few of the parameters listed to help explain how Mr. Bayes works.  Nchains is the number of MCMC chains that are sampling the parameter space throughout the run.  The default of 4 chains means that 4 separate MCMC instances are occurring simultaneously for each run.  Each chain stars from a different random starting tree and samples different parameter values (such as tree topology, branch lengths, substitution rates, etc.) at each step and navigates the parameter space by moving toward values that increase the likelihood of the data given the sampled parameter values.  
+I’d like to make mention of a few of the parameters listed to help explain how Mr. Bayes works.  Nchains is the number of MCMC chains that are sampling the parameter space throughout the run.  The default of 4 chains means that 4 separate MCMC instances are occurring simultaneously for each run (sound familiar?).  Each chain starts from a different random starting tree and samples different parameter values (such as tree topology, branch lengths, substitution rates, etc.) at each step and navigates the parameter space by moving toward values that increase the likelihood of the data given the sampled parameter values.  
 
 ### Q2: Why are multiple chains used to sample the parameter space during an analysis in Mr. Bayes?
 
@@ -138,19 +138,38 @@ MrBayes > mcmcp ngen=20000 samplefreq=200 diagnfreq=500 burninfrac=0.20 stopval=
 
 Here, we have changed the number of steps in the MCMC chain to 20,000, will be sampling every 200 steps in the chain, and will be comparing the similarity/difference of the tree samples between the two runs every 500 steps in the chain.  We also set the burn-in period equal to 20% of the total samples collected.  
 
-### Q3: What the hell is *burn-in*?
+### Q3: Do you remember what *burn-in* is?
 
 Ok.  Now lets check to see that all of the parameters we wanted to change were indeed set to the values we wanted.
 
 ```
 MrBayes > help mcmcp
 ```
+
+Before we start the analysis lets take a look a the model priors that can be modified in Mr. Bayes.  
+
+```
+MrBayes > help prset
+```
+
+Don't worry, for today's exersize we will leave all of these at default but you can see that there are a lot of ways to fine tune this software depending on the goals of your analysis and the prior information you may have about your sequence data, sample population, etc.
+
+The last thing to do before starting the MCMC is to summarize the model settings we'll be using to analyze our data based...this will include all of the changes made above and all of the options that were left at default.  
+
+```
+MrBayes > showmodel
+```
+
+How would you go back and modify something you see here if it doesn't look correct?  
+How could you learn about some of the parameters and priors listed here if you weren't familiar with them?
+
 If everything looks good we can start the run with the mcmc command…
 
 ```
 MrBayes > mcmc 
 ```
-During the run, you will see updated output printed to the terminal depending on the frequency requested (*mcmc printfreq* command was left at default here but can be changed).  The current state of the chain (# of the most recent sampled step) is listed in the first column.  The next 8 columns are the log likelihood values for each sampled state for each of the 4 chains…with an asterisk separating the chains for each of the two independent runs.  The values listed in square brackets correspond to the cold chain, while the parentheses are used for the hot chains.  If the hot and cold chains are efficiently, you should see that the position of the cold chain moves throughout the run.  If the cold chain gets stuck in one position too long you can either extend the length of the run (increase the number of steps in the MCMC chain), or lower the temperature difference between chains (using the *mcmcp temp* command) to increase the efficiency with which the swapping between cold and hot chains occur.
+
+During the run, you will see updated output printed to the terminal depending on the frequency requested (*mcmc printfreq* command was left at default here but can be changed).  The current state of the chain (# of the most recent sampled step) is listed in the first column.  The next 8 columns are the log likelihood values for each sampled state for each of the 4 chains…with an asterisk separating the chains for each of the two independent runs.  The values listed in square brackets correspond to the cold chain, while the parentheses are used for the hot chains.  If the hot and cold chains are swapping efficiently, you should see that the position of the cold chain moves throughout the run.  If the cold chain gets stuck in one position too long, you can either extend the length of the run (increase the number of steps in the MCMC chain), or lower the temperature difference between chains (using the *mcmcp temp* command) to increase the efficiency with which the swapping between cold and hot chains occur.
 
 After every n=diagnfreq generations, *Average deviation of split frequencies:* will print to the terminal.  This value is generated by comparing the similarity of the tree samples between the two independent runs and is an indication of whether or not the chains are converging on the similar posterior estimates.  The lower the number gets, the better the two runs are converging on the same tree estimates.   According to the Mr. Bayes manual, values below 0.05 indicate *adequate* convergence for many analyses, while values below 0.01 indicate *very good* convergence.
 
@@ -164,7 +183,7 @@ Given the short time we have for this tutorial today I’ve got files for you to
 
 Load the following file into Mr. Bayes: PLVAB_aln_mb_2.nex. (Can you remember how to do this?)
 
-Now we will summarize the sampled parameter from the two independent runs in order to generate estimated values that fit our data.
+Now we will summarize the sampled parameters from the two independent runs in order to generate estimated values that fit our data.
 
 ```
 # summarize sampled parameters
@@ -186,7 +205,7 @@ Q4: What does *prob* stand for here and why is this important in how trees like 
 
 Here’s the list of questions I mentioned earlier that could be answered by an approach like what you just did in this exercise…what would be your answer to these questions based on the tree you just produced?
 
-Are viral genotypes (phylogenetic clustering) correlated to host species?
+Are viral genotypes (phylogenetic clustering) correlated to host species (Pco and Lru)?
 Is there evidence of cross-species transmission of PLVA?  …of PLVB?
 Are the viral populations geographically structured?  …temporally structured?
 
@@ -205,6 +224,6 @@ A2: Take a look at the following fictionalized parameter space where the x- and 
 
 Having multiple chains simultaneously sampling the parameter space makes it more likely that the absolute maximum likelihood (highest hill on the landscape) will be found.  This is accomplished by two mechanisms.  First, more of the parameter space can be sampled since 4 chains starting from 4 different *locations* are moving independently across the space.  Second, it allows chains to *swap* from one position on the landscape to another if the latter is in an area of higher likelihood.  This allows chains stuck on a local optimum (i.e. the green chain above) to explore other areas on the landscape by *jumping* the valleys between different hills.
 
-A3: At the start of each MCMC analysis, individual posterior parameter estimates are more dependent on the starting location (which if you recall is random!) than on what is most likely based on the alignment, model of substitution, etc.  However, as the length of the chain grows, the posterior parameter estimates become more and more accurate in reflecting the *true* values.  Therefore, the when using Bayesian MCMC approach to estimate phylogenetic trees and their associated parameters, the early samples are called *burn-in* and are discarded from downstream analyses.
+A3: At the start of each MCMC analysis, individual posterior parameter estimates are more dependent on the starting location (which if you recall is random!) than on what is most likely based on the alignment, model of substitution, etc.  However, as the length of the chain grows, the posterior parameter estimates become more and more accurate in reflecting the *true* values.  Therefore, the when using Bayesian MCMC approaches to estimate phylogenetic trees and their associated parameters, the early samples are called *burn-in* and are discarded from downstream analyses.
 
-A4:  *prob* (or sometimes ‘post prob’) stands for *posterior probability* which is the support value assigned to branch points/nodes on Bayesian trees.  In short, this can be thought of as the fraction of the sampled trees (after discarding burnin) that contain that given branch point.  This value is analogous to the *bootstrap* value from Maximum Likelihood or Neighbor-Joining tree building methods.  Higher values indicate stronger support for a given branch point and for the ordering of tips into groups on either side of that node.  
+A4:  *prob* (or sometimes ‘post prob’) stands for *posterior probability* which is the support value assigned to branch points/nodes on Bayesian trees.  In short, this can be thought of as the fraction of the sampled trees (after discarding burnin) that contain that given branch point (aka. the probability that each node is accurate).  This value is analogous to the *bootstrap* value from Maximum Likelihood or Neighbor-Joining tree building methods.  Higher values indicate stronger support for a given branch point and for the ordering of tips into paraphyletic groups on either side of that node.  
