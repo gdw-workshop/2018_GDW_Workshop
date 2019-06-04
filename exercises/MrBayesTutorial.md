@@ -25,11 +25,9 @@ Are the viral populations geographically structured?  …temporally structured?
 
 ## Let’s start with the computer work.  
 
-Download the all of the files from the following folder and place them in the GDW_Data
+Download the *MrBayes Data.zip* file from the GDW github exercises folder, place it in *Desktop/GDW_Data*, and double click it to unzip.
 
-https://drive.google.com/drive/folders/1T5N3vGdl8YYiLSFsm8vxrxph0JRhCEgy?usp=sharing
-
-Open a terminal window and cd to GDW_Data.
+Open a terminal window and cd to *GDW_Data/MrBayes*.
 
 ```
 
