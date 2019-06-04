@@ -200,6 +200,7 @@ The sampled parameter values have been recorded each *samplefreq = n* step in th
 
 # summarize sampled trees
 
+```
 MrBayes > sumt
 ```
 
