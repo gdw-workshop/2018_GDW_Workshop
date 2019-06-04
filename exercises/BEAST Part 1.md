@@ -4,7 +4,7 @@ Genomics of Disease in Wildlife BEAST Tutorial
 
 ## First.  Download all of the files for this tutorial from the following link...
 
-# https://drive.google.com/open?id=0B8EJy8MFHGLnOW1LX1NsM05uNEk
+https://drive.google.com/open?id=0B8EJy8MFHGLnOW1LX1NsM05uNEk
 
 Feel free to read on while it is downloading (it may take a couple of minutes).  Once downloaded, move it to the *Desktop/GDW_Data* folder and double click it to unzip.
 
