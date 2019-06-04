@@ -26,7 +26,7 @@ It is worth emphasising that the purpose of TempEst is not to estimate the molec
 
 ## Examining the reliability of the molecular clock estimate obtained in BEAST
 
-To save time, you won’t be asked to set up a BEAST analysis of the *Borrelia* data set and are instead provided with the log files of a finished run. Import the log file (“Bbss_chr_ucln.const.log”) into TRACER and examine the results for the clock rate. The analysis was done using a relaxed molecular clock model (Drummond et al. 2007)  and the parameter to look for is called ‘mean rate’. 
+To save time, you won’t be asked to set up a BEAST analysis of the *Borrelia* data set and are instead provided with the log files of a finished run. Import the log file (“Bbss_chr_ucln.const.log”) into TRACER and examine the results for the clock rate. The analysis was done using a relaxed molecular clock model (Drummond et al. 2007)  and the parameter to look for is called ‘meanRate’. 
 
 *How fast is B. burgdorferi evolving according to these results?*
 
