@@ -2,7 +2,11 @@ Genomics of Disease in Wildlife BEAST Tutorial
 ==============================================
 
 
-## First.  Download the *Beast Part 1 Data.zip* file from the github exercises folder.  Feel free to read on while it is downloading.  Once downloaded, move it to the *GDW_Data folder* and double click it to unzip.
+## First.  Download all of the files for this tutorial from the following link...
+
+# https://drive.google.com/open?id=0B8EJy8MFHGLnOW1LX1NsM05uNEk
+
+Feel free to read on while it is downloading (it may take a couple of minutes).  Once downloaded, move it to the *Desktop/GDW_Data* folder and double click it to unzip.
 
 The alignment we'll be analyzing today is the same as what we used in the Mr. Bayes tutorial yesterday.  Just as a reminder...the sequences are from two subtypes of a feline retrovirus (pumalentivirus A and B) that infect bobcats (Lru) and mountain lions (Pco).  We've constructed phylogenetic trees in BEAST using these and other sequence data from these viruses to understand host-pathogen relationships, intra-and inter-host transmission dynamics, and how the ecology of the viruses provide insight into the ecology of the hosts they infect.  Today we'll be doing a fairly standard BEAST workflow to estimate the phylogenetic relationships among these viral isolates.  The goal of this tutorial is to practice the steps required to perform an analysis using BEAST, and to introduce you to some of the concepts involved in the set up and interpetation of the analysis.
 
@@ -52,13 +56,12 @@ FigTree (remember this?) is used to visualize the final tree and can be used to 
 
 
 
-
 # Ok.  Lets get Started!
 
-You should now have a BEAST folderGo to the BEAST folder in the GDW-Apps directory on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
+You should now have a *BEAST_Part1* folder in *GDW_Data* that has five files in it (this is what you downloaded and unzipped above).  Go to the *BEAST* folder in the *GDW-Apps* directory on your desktop.  All of the following programs are located here except for FigTree and Tracer which are in their own folders within GDW-Apps.
 
 
-## Open BEAUTi
+## Open BEAUTi v1.10.4
 
 Once in BEAUTi...
 
@@ -70,17 +73,13 @@ You should see a summary of the file that you loaded under the *Partitions* tab.
 
 If you want to get complicated later on and analyze multiple data sets (i.e. different loci) or simultaneously analyze non-genetic traits you would import those additional data sets here before moving on.
 
-The *Taxa* tab is primarily used when you want to separate samples *a priori* by taxa to determine the time to most recent common ancestor (TMRCA) of a pre-defined group of samples.  
-
-For example, remember that this dataset contains sequences from two subtypes of puma lentivirus?  If our primary question was: When did PLVA and PLVB diverge (or in coalescent language...what is the TMRCA of PLVA and PLVB?)?  Then we would define two Taxon Sets here...one containing all PLVA and the other containing all PLVB isolates.  
-
-We won’t use this today...but feel free to explore later:)
+The *Taxa* tab is primarily used when you want to estimate certain aspects of evolutionary history of pre-defined groups of related taxa.  We won’t use this today...but feel free to explore later:)
 
 Select the *Tips* tab
 
 Select *Use tip dates*
 
-Click *Guess Dates*
+Click *Parse Dates*
 
 
 Now click *Defined by a prefix and its order*
@@ -95,7 +94,7 @@ Leave the rest of the settings at default (unchecked) and hit *OK*
 
 The *Date* column of the *Tips* tab should now be populated with dates ranging from the 80s to the 2010s.  Ignore the precision column for now. 
 
-### Q1a: What did we just do?  Take a minute to think about it before moving on.
+### Q1a: What did we just do?  Take a minute to think about it before moving on.  Why is this important in the types of analyses BEAST is typically used for?
 
 ### Q1b: What is the height column and why does that matter for analyses/output in BEAST?
 
@@ -117,9 +116,9 @@ Under *Substitution Model* select *HKY*
 
 Use estimated base frequencies
 
-Use a gamma distribution to estimate site heterogeneity (Q: WTF is this referring to?)
+Use a gamma distribution to estimate site heterogeneity (Q: What is this referring to?)
 
-Keep the number of Gamma Categories low unless you have reason to do otherwise...select 4.
+Its often good to keep the number of Gamma Categories low unless you have reason to do otherwise...select 4.
 
 Partition codons into two groups *(1+2),3*
 
@@ -145,7 +144,7 @@ Next up: *Trees* tab!
 
 For today we will keep it simple and use a *Constant Size Coalescent* Tree Prior but this is one area that BEAST has grown in recent versions.  
 
-I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions.  For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  Most of these options have papers that describe them so as your BEAST skills become more advanced you can explore these.
+I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions and there are papers that describe each of these options.  For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  Most of these options have papers that describe them so as your BEAST skills become more advanced you can explore these.
 
 Leave the default of *Random Starting Tree* and move on to the *States* tab.
 
@@ -158,13 +157,10 @@ If you select different model parameters next time you use BEAUTi...you will hav
 ## Please take a minute to read the description of each prior and seee if you can figure out how they relate to the model choices we've made in the *Sites*, *Clocks*, and *Trees* tabs. 
 
 For today we will leave them all at default except the following:
-	
-*allMus*: Change this to lognormal with an initial value = 1 and log(stdev) = 1
 
 *ucld.mean*: change this to lognormal with an intial value of 0.1 and a standard deviation of 0.5
 
-Click on the *Operators* tab.  Today (and generally) you don’t need to mess with this stuff as long as the *Auto Optimize* box is checked in the upper left corner.  
-Sometimes the output from a run will give you a warning that how the chain samples a certain parameter needs to be tweaked and you can use this tab to do just.  
+Click on the *Operators* tab.  Today (and generally) you don’t need to mess with these as long as the *Auto Optimize* box is checked in the upper left corner.  Sometimes the output from a run will give you a warning that how the chain samples a certain parameter needs to be tweaked and you can use this tab to do just.  
 
 Click on the *MCMC* tab.
 
@@ -172,11 +168,11 @@ Set the length of the chain to *1,000,000* and log the parameter estimates every
 
 These numbers are inadequate but it will let you get output files fast (and I have an output file from longer chains we can look at :)). 
 
-[As a rule of thumb you want to end up with ~10,000 logged parameters/trees at the end of a BEAST run. This means that if you run the chain for 10^8 steps you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start.]
+[As a rule of thumb you want to end up with ~10,000 logged parameters/trees at the end of a BEAST run. This means that if you run the chain for 10^8 steps, you’ll log parameter estimates (and trees) every 10^4 steps. Make sense? If you run the chain less steps you log more frequently.  This is at least a good way to start.]
 
 You can change the output file stem name if you want or leave it as is. If you start to do multiple combinations of BEAUTi parameters and BEAST runs from the same alignment file it is nice to label the output differently.  I use numbers, then letters, then obscenities in that order as I go through the process many times until it comes out right! 
 
-Ok.  Click *Generate BEAST File* and save it where you want.
+Ok.  Click *Generate BEAST File* and save it where you want (the default is in the same location of your input alignment file).
 
 A pop up window will appear.  This is your chance to change any additional parameters from default but today we will leave them alone.
 
@@ -188,28 +184,28 @@ Wahoo!  Step one done!
 ## Open BEAST (also located in GDW-Apps/BEAST)
 
 
-Load your newly created *file.xml* (PLVAB_aln.xml unless you changed it).
-
-See the check box that says *Use Beagle library if available*?  Well, Beagle is an add-on software that can enable BEAST to run faster...much faster depending on the configuration of the computer/server you're using to run BEAST.  Tyler Eike (our rockstar IT guy) got Beagle up and running on these laptops so feel free to run BEAST with and without BEAGLE tody so you can see the difference. 
+Load your newly created *file.xml* (PLVAB_aln.xml unless you changed it).  You can leave all of the check boxes and fields at default.
 
 Select *Run* and you are off to the races.  
 
 Easy compared to BEAUTi right?
 
+It will take about 3 minutes to run this analysis.
 
-[If you didn’t make it through BEAUTi or if you run into errors when you run BEAST, you already downloaded a BEAST input file that will work so go to your directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
+
+[If you didn’t make it through BEAUTi or if you run into errors when you run BEAST, you already downloaded a BEAST input file that will work so go to your *BEAST_Part1* directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
 
 Helpful tip...when the beast run completes, some important summary statistics that may be used to modidify subsequent runs are printed to the screen.  You can save the beast output as a .txt file to keep them for later reference.
 
 While BEAST is running…
 
 
-## Open Tracer (in GDW-Apps/Tracer)
+## Open Tracer (in GDW-Apps/Tracer v1.7.1)
 
 
 File > Import Trace File 
 
-Select your *file_stem.log* file that is in progress from your current BEAST run (yes you can view it before the BEAST run is complete).   
+Select your *file_stem.log* file (in *GDW_Apps/BEAST_Part1*) that is in progress from your current BEAST run (you can view it before the BEAST run is complete).   
 
 You should also open *PLVAB_aln_GDW1.log* which is a BEAST output file from the same alignment we used earlier but with a few extra parameter estimates and a chain that was run 100x as long.  It will work well to let you see what a log file will look like after the end of a sufficiently long MCMC chain.
 
@@ -221,7 +217,7 @@ Ok. Probably none of this will make sense (because this is likely your first tim
 
 This is also a good time to go back to the prior distributions and values we entered into BEAUTi to see how our choices may have influenced the outcome, or which parameter estimates may be wildy different than we thought they would be.
 
-The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  Before you do your own BEAST analyses...read up on ESS in one of the sources of knowledge I listed at the start of the tutorial.
+The effective sample size (*ESS*) value is an important metric to use to evaluate if you have enough samples from your chain to have accurate estimates of your parameters.  (Remember this from Mr. Bayes yesterday?) Before you do your own BEAST analyses...read up on ESS in one of the sources of knowledge I listed at the start of the tutorial.
 
 If this is less than 100 it will be red to give you a warning that estimates should not be trusted.  
 
@@ -235,7 +231,7 @@ To increase low ESS values you can:
 
 2) sample your chain more frequently
 
-3) run multiple independent runs of BEAST and combine them (not covered here but you use LogCombiner to do this)
+3) run multiple independent runs of BEAST and combine them (not covered here but you use *LogCombiner* to do this)
 
 4) chose a less complex model as your data may not be informative enough for highly complex parameter estimates.
 
