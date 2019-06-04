@@ -14,7 +14,7 @@ This file is an alignment of two subtypes of retrovirus sequences (puma lentivir
 
 I’ve selected a short, informative region of the genome for this exercise (rather than the full viral genomes) in order to shorten the amount of time it takes to run the file in Mr. Bayes.  However, the same process can work with any length of alignment assuming the alignment is accurate, and that you have enough computational power (and patience) to run larger datasets.
 
-Typical questions that could be asked with this type of dataset using todays analysis include: 
+Typical questions that could be asked with this type of dataset using today's analysis include: 
 
 Are viral genotypes (phylogenetic clustering) correlated to host species?
 Is there evidence of cross-species transmission of PLVA?  …of PLVB?
