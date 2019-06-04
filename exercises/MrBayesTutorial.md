@@ -3,7 +3,9 @@ Genomics of Disease in Wildlife Mr. Bayes Tutorial
 
 ## What is MrBayes?
 
-MrBayes is a command-line driven software package for Bayesian estimation of phylogenetic trees and evolution parameters that can be downloaded, installed, and run from personal computers or servers.  
+MrBayes is a command-line driven software package for Bayesian estimation of phylogenetic trees and evolution parameters that can be downloaded, installed, and run from personal computers or servers.  The software and manual can be obtained from this website...
+
+http://nbisweden.github.io/MrBayes/
 
 
 ## Ok.  Lets begin!
@@ -59,25 +61,29 @@ MrBayes > help lset
 # You should see something that looks like this:
 
 
-Default model settings:                                                       
+Model settings for partition 1:                                              
                                                                                  
    Parameter    Options                               Current Setting            
    ------------------------------------------------------------------            
-   Nucmodel     4by4/Doublet/Codon/Protein            4by4                         
-   Nst          1/2/6/Mixed                           1                         
-   Code         Universal/Vertmt/Mycoplasma/                                     
-                Yeast/Ciliates/Metmt                  Universal                         
-   Ploidy       Haploid/Diploid/Zlinked               Diploid                         
+   Nucmodel     4by4/Doublet/Codon/Protein              4by4                       
+   Nst          1/2/6/Mixed                             1                       
+   Code         Universal/Vertmt/Invermt/Yeast/Mycoplasma/                       
+                Ciliate/Echinoderm/Euplotid/Metmt       Universal                       
+   Ploidy       Haploid/Diploid/Zlinked                 Diploid                       
    Rates        Equal/Gamma/LNorm/Propinv/                                       
-                Invgamma/Adgamma                      Equal                         
-   Ngammacat    <number>                              4                         
-   Nbetacat     <number>                              5                         
-   Omegavar     Equal/Ny98/M3                         Equal                         
-   Covarion     No/Yes                                No                         
-   Coding       All/Variable/Noabsencesites/                                     
-                Nopresencesites                       All                         
-   Parsmodel    No/Yes                                No                         
-   ------------------------------------------------------------------    
+                Invgamma/Adgamma/Kmixture               Equal                       
+   Ngammacat    <number>                                4                       
+   Nlnormcat    <number>                                4                       
+   Nmixtcat     <number>                                4                       
+   Nbetacat     <number>                                5                       
+   Omegavar     Equal/Ny98/M3                           Equal                       
+   Covarion     No/Yes                                  No                       
+   Coding       All/Variable/Informative/Nosingletons                            
+                Noabsencesites/Nopresencesites/                                  
+                Nosingletonabsence/Nosingletonpresence  All                       
+   Parsmodel    No/Yes                                  No                       
+                                                                                 
+   ------------------------------------------------------------------          
 ```
 For today’s tutorial we will modify a few of the likelihood and nucleotide parameters (using *lset*) and some of the parameters that set how the sampling should be performed during the MCMC run (using *mcmcp*).  All parameters are modified using the same pattern that is described below.
 
@@ -116,11 +122,11 @@ Default model settings:
 Now let’s look at the MCMC paramaeters…
 
 ```
-# view MCMC parameters
+# view the default MCMC parameter settings
 MrBayes > help mcmcp
 ```
 
-I’d like to make mention of a few of the parameters listed to help explain how Mr. Bayes works.  Nchains is the number of MCMC chains that are sampling the parameter space throughout the run.  The default of 4 chains means that 4 separate MCMC instances are occurring simultaneously for each run (sound familiar?).  Each chain samples different parameter values (such as tree topology, branch lengths, substitution rates, etc.) at each step and navigates the parameter space by moving toward values that increase the likelihood of the data given the sampled parameter values.  At default, Mr. Bayes also conducts two independent run (each having 4 chains so 8 chains total)
+I’d like to make mention of a few of the parameters listed to help explain how Mr. Bayes works.  Nchains is the number of MCMC chains that are sampling the parameter space throughout the run.  The default of 4 chains means that 4 separate MCMC instances are occurring simultaneously for each run (sound familiar?).  Each chain samples different parameter values (such as tree topology, branch lengths, substitution rates, etc.) at each step and navigates the parameter space by moving toward values that increase the likelihood of the data given the sampled parameter values.  At default, Mr. Bayes also conducts two independent runs (each having 4 chains so 8 chains total).
 
 ### Q2: Why are multiple chains used to sample the parameter space during an analysis in Mr. Bayes?
 
@@ -128,11 +134,8 @@ I’d like to make mention of a few of the parameters listed to help explain how
 
 The *mcmcp* command is used to modify the mcmc parameters prior to starting the run. 
 
+
 ```
-# View default mcmc parameter settings
-
-MrBayes > help mcmcp
-
 # change some parameters for today’s analysis
 
 MrBayes > mcmcp ngen=20000 samplefreq=200 diagnfreq=500 burninfrac=0.20 stopval=0.01
@@ -174,9 +177,9 @@ MrBayes > mcmc
 
 During the run, you will see updated output printed to the terminal depending on the frequency requested (*mcmc printfreq* command was left at default here but can be changed).  The current state of the chain (# of the most recent sampled step) is listed in the first column.  The next 8 columns are the log likelihood values for each sampled state for each of the 4 chains…with an asterisk separating the chains for each of the two independent runs.  The values listed in square brackets correspond to the cold chain, while the parentheses are used for the hot chains.  If the hot and cold chains are swapping efficiently, you should see that the position of the cold chain moves throughout the run.  If the cold chain gets stuck in one position too long, you can either extend the length of the run (increase the number of steps in the MCMC chain), or lower the temperature difference between chains (using the *mcmcp temp* command) to increase the efficiency with which the swapping between cold and hot chains occur.
 
-After every *n=diagnfreq generations*, *Average deviation of split frequencies:* will print to the terminal.  This value is generated by comparing the similarity of the tree samples between the two independent runs and is an indication of whether or not the chains are converging on the similar posterior estimates.  The lower the number gets, the better the two runs are converging on the same tree estimates.   According to the Mr. Bayes manual, values below 0.05 indicate *adequate* convergence for many analyses, while values below 0.01 indicate *very good* convergence.
+After every *n=diagnfreq* generations, *Average deviation of split frequencies:* will print to the terminal.  This value is generated by comparing the similarity of the tree samples between the two independent runs and is an indication of whether or not the chains are converging on the similar posterior estimates.  The lower the number gets, the better the two runs are converging on the same tree estimates.   Now that you know this...revisit Question 3 above :)
 
-Ok.  Let Mr. Bayes run.  The run will continue until n=ngen steps has been reached or until the average deviation of split frequencies is equal to *stopval*…one of the mcmcp parameters.
+Ok.  Let Mr. Bayes run.  The run will continue until n=ngen steps has been reached or until the average deviation of split frequencies is equal to *stopval*…one of the mcmcp parameters.  When I tested this it took about 20 minutes to finish.
 
 Given the short time we have for this tutorial today I’ve got files for you to work with for the remainder of the tutorial that are from this same dataset but were run ngen=1,000,000 steps.
 
