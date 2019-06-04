@@ -222,11 +222,13 @@ Is there evidence of cross-species transmission of PLVA?  …of PLVB?
 Are the viral populations geographically structured?  …temporally structured?
 
 
+## Extra credit
+
+Is your Mr. Bayes analysis of the PLVAB_aln_mb.nex file complete?  If so summarize the parameter and tree files and view the output.  What was the primary difference between the two anlyses?  How do the mean and variance values of the parameter estimates compare to the output from PLVAB_aln_mb_2.nex analysis?  How do the ESS & PSRF values compare between the two analyses?  What does this say about the analysis you ran today and how would you modify future analyses to account for this?
 
 
 
-
-## Brief answers to the above questions…
+## Brief answers to the exercise questions…
 
 A1: We just set the primary data-type of our alignment to *codon* (vs. protein or non-coding nucleotides), set the nucleotide substitution model to the general-time reversible model (*nst=6*), and we allowed the rate of substitutions to vary according to a gamma distribution with some invariable sites (*invgamma*).  
 
