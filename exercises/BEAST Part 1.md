@@ -65,15 +65,16 @@ You should now have a *BEAST_Part1* folder in *GDW_Data* that has five files in 
 
 Once in BEAUTi...
 
-File > Import Data 
-Now navigate to the directory where you put the files from Google Drive.
+**File > Import Data**
+
+Now navigate to the directory where you put the files from Google Drive (Desktop/GDW_Data/BEAST_Part1)..
 	Select *PLVAB_aln.nex*
 
 You should see a summary of the file that you loaded under the *Partitions* tab.  Don’t worry about the details now.  If you don’t get an error message you’re doing well.
 
-If you want to get complicated later on and analyze multiple data sets (i.e. different loci) or simultaneously analyze non-genetic traits you would import those additional data sets here before moving on.
+If you want to get complicated later on and analyze multiple data sets (i.e. different loci) or simultaneously analyze non-genetic traits you would import those additional data sets here before moving on.  Each data set would be imported as a different data partition so you would see multiple lines hear with each line describing a data partition to be analyzed.
 
-The *Taxa* tab is primarily used when you want to estimate certain aspects of evolutionary history of pre-defined groups of related taxa.  We won’t use this today...but feel free to explore later:)
+The *Taxa* tab is primarily used when you want to estimate certain aspects of evolutionary history of pre-defined groups of related taxa.  We won’t use this today...but feel free to explore later :)
 
 Select the *Tips* tab
 
@@ -92,7 +93,7 @@ Select *Parse as a number*
 
 Leave the rest of the settings at default (unchecked) and hit *OK*
 
-The *Date* column of the *Tips* tab should now be populated with dates ranging from the 80s to the 2010s.  Ignore the precision column for now. 
+The *Date* column of the *Tips* tab should now be populated with dates ranging from the 1980s to the 2010s.  Ignore the precision column for now. 
 
 ### Q1a: What did we just do?  Take a minute to think about it before moving on.  Why is this important in the types of analyses BEAST is typically used for?
 
@@ -110,13 +111,13 @@ But this is beyond the scope of today’s introduction so let’s move on to the
 
 
 Here’s where you should ideally know enough about your sequences and the genes/organisms they came from that you can inform the model you’re using to analyze them.  
-But since we are analyzing my data and not yours…you’ll just have to take my word for it that the following parameters are good ones for these data.  
+But since we are analyzing my data and not yours…you’ll just have to take my word for it that the following parameters are good ones for these data.  When you are ready to analyze your own data in BEAST you can use information from the literature, model selection software like jModelTest, ore previous experience with your organisms of interest to select priors for your parameters.
 
 Under *Substitution Model* select *HKY*
 
 Use estimated base frequencies
 
-Use a gamma distribution to estimate site heterogeneity (Q: What is this referring to?)
+Use a gamma distribution to estimate site heterogeneity (Q: What is this referring to?  Hint: Roman talked about it yesterday.)
 
 Its often good to keep the number of Gamma Categories low unless you have reason to do otherwise...select 4.
 
@@ -133,7 +134,7 @@ Under *Clock type* chose: *Uncorrelated relaxed clock*
 The default *Relaxed Distribution* is Lognormal.  Leave this as is.
 
 
-### Q2a: What is the difference between a strict clock and relaxed clock?
+### Q2a: What do you think the difference is between a strict clock and relaxed clock?
 ### Q2b: What is an *uncorrelated* relaxed clock?
 ### Q2c: For what types of data sets (taxa, genes, evolutionary questions, etc) might one or the other of these options be most appropriate?
 
@@ -144,11 +145,11 @@ Next up: *Trees* tab!
 
 For today we will keep it simple and use a *Constant Size Coalescent* Tree Prior but this is one area that BEAST has grown in recent versions.  
 
-I honestly don’t know what several of these Tree priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions and there are papers that describe each of these options.  For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  Most of these options have papers that describe them so as your BEAST skills become more advanced you can explore these.
+I honestly don’t know what several of these Tree Priors do but this there is real potential here to apply some cool analyses to different types of data and different evolutionary questions and there are papers that describe each of these options.  For example, the Bayesian Skyline option can estimate the timeline of historical changes in effective population size based on the pattern of coalescence in your dataset. Pretty cool right???  Jenn Malmberg showed the results of such an analysis yesterday when describing that there was an increase in the estimate size of the virus population size concurrent with an increase in the census size of the Florida panther population.
 
 Leave the default of *Random Starting Tree* and move on to the *States* tab.
 
-If you want to do ancestral reconstruction you can specify some options here.  But we don’t.  
+If you want to do ancestral reconstruction you can specify some options here.  But we don’t today.  
 So let’s move on to the *Priors* tab.
 
 This is another place it is important (although not necessarily critical) that you have some knowledge of the sequences/taxa that you are analyzing.  Each of the lines on this page are present because of the parameter choices we have made thus far.  
@@ -160,7 +161,7 @@ For today we will leave them all at default except the following:
 
 *ucld.mean*: change this to lognormal with an intial value of 0.1 and a standard deviation of 0.5
 
-Click on the *Operators* tab.  Today (and generally) you don’t need to mess with these as long as the *Auto Optimize* box is checked in the upper left corner.  Sometimes the output from a run will give you a warning that how the chain samples a certain parameter needs to be tweaked and you can use this tab to do just.  
+Click on the *Operators* tab.  Today (and generally) you don’t need to mess with these as long as the *Auto Optimize* box is checked in the upper left corner.  Sometimes the output from a run will give you a warning that how the chain samples a certain parameter needs to be tweaked and you can use this tab to do just that.  
 
 Click on the *MCMC* tab.
 
@@ -193,17 +194,17 @@ Easy compared to BEAUTi right?
 It will take about 3 minutes to run this analysis.
 
 
-[If you didn’t make it through BEAUTi or if you run into errors when you run BEAST, you already downloaded a BEAST input file that will work so go to your *BEAST_Part1* directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
+[If you didn’t make it through BEAUTi or if you run into errors when you run BEAST, you already downloaded a BEAST input file that will work so go to your *GDW_Data/BEAST_Part1* directory and find *PLVAB_aln_GDW.xml* and use it to run BEAST.
 
 Helpful tip...when the beast run completes, some important summary statistics that may be used to modidify subsequent runs are printed to the screen.  You can save the beast output as a .txt file to keep them for later reference.
 
 While BEAST is running…
 
 
-## Open Tracer (in GDW-Apps/Tracer v1.7.1)
+## Open Tracer (in Desktop/GDW-Apps/Tracer v1.7.1)
 
 
-File > Import Trace File 
+**File > Import Trace File** 
 
 Select your *file_stem.log* file (in *GDW_Apps/BEAST_Part1*) that is in progress from your current BEAST run (you can view it before the BEAST run is complete).   
 
@@ -239,14 +240,14 @@ You can visualize the distribution/frequency of values sampled throughout the le
 
 The *Trace* is especially useful to view in order to know if you have achieved good sampling of the posterior…it should look like a ‘spiny caterpillar’ (or at least that’s how it was taught to me).  
 
-You can also select two parameters (by holding command) and then click on *Marginal Prob Distribution* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values (Do you remember what kappa is? If not check back to the priors tab of Beauti or google it!).  Do the same for CP1+2 and CP3 mu values.
+You can also select two parameters (by holding command) and then click on *Marginal Prob Distribution* to see how they relate to one another.  Try this for the CP1+2 and CP3 kappa values (Do you remember what kappa is? If not check back to the priors tab of Beauti or google it).  Do the same for CP1+2 and CP3 mu values.
 
 ## Q3: Were we correct to estimate values for these codon partitions separately?   What does this say about the flexibility of different codon positions to mutate/evolve over time?
 
 Ok.  Spend as much time as you want with Tracer but when you’re ready let’s move on.
 
 
-## Open TreeAnnotator (in GDW-Apps/BEAST)
+## Open TreeAnnotator (in Destktop/GDW-Apps/BEAST)
 
 
 
@@ -261,7 +262,7 @@ Choose your output file name ending with *.tre* and the location you want to sav
 Now go back up and enter a value equal to 10% of the total number of MCMC steps in your chain (remember you entered this value in the *MCMC* tab in BEAUTi?) into the *Specify the burnin as the number of states* field.
 	
 i.e. if you are analyzing your BEAST output from a run of 10,000,000 steps then you’d have a burnin of 1,000,000.  For a chain length of 1,000,000 steps (like the inadequate example I had you do) enter 100,000.  
-(Hint: If you forget the number of steps you have in a given chain you can open the log file in Tracer and it will tell you how many steps were in the run.)
+(Hint: If you forget the number of steps you have in a given chain you can open the log file in *Tracer* and it will tell you how many steps were in the run.)
 
 Select *Maximum clade credibility tree* and *Median node heights*
 
@@ -279,11 +280,11 @@ Pretty cool right?
 Now let’s open the MCC tree and check it out.  This is the moment we’ve been working towards.  Exciting I know.
 
 
-## Open FigTree (in GDW_Apps/FigTree/)
+## Open FigTree (in Desktop/GDW_Apps/FigTree)
 
 
-Use File > Open 
-	Select your output.tre file that you made in TreeAnnotator (or you can open PLVAB_aln_GDW1.tre)
+Use **File > Open** 
+	Select your *.tre* file that you made in TreeAnnotator (or you can open PLVAB_aln_GDW1.tre)
 
 Now you can use the panel on the left to play with how the tree looks, color branches and nodes, and visualize many of the parameters we estimated during the BEAST run.  
 
